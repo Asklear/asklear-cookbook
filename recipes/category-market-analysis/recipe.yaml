@@ -1,0 +1,7 @@
+id: category-market-analysis
+title: Category Market Analysis
+status: draft
+datasets:
+  - jd
+outputs:
+  - deck

@@ -8,10 +8,10 @@
 
 ## Use with your Agent
 
-使用前先按 [Asklear Agent Docs](https://dashboard.asklear.cn/docs/agent) 完成接入，然后把下面的指令发给 Agent：
+使用前先连接 Asklear MCP，然后把下面的指令发给 Agent：
 
 ```text
-请读取 <RAW_SKILL_URL>，使用这个 Recipe 完成以下研究：
+请读取 <RAW_WORKFLOW_URL>，使用这个 Recipe 完成以下研究：
 
 - 研究对象：<OBJECT>
 - 时间范围：<TIME_RANGE>

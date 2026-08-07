@@ -1,9 +1,6 @@
----
-name: replace-with-recipe-id
-description: Replace with when an Agent should use this business research recipe.
----
-
 # Recipe title
+
+Asklear capability and query rules: https://dashboard.asklear.cn/docs/agent/llms.txt
 
 ## Outcome
 

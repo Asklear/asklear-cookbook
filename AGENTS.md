@@ -16,14 +16,14 @@
 ```text
 recipes/<recipe-id>/
 ├── README.md
-├── SKILL.md
+├── workflow.md
 ├── recipe.yaml
 ├── src/
 └── example/
 ```
 
 - `README.md`：业务问题、结果预览、可复制给 Agent 的使用指令和限制；
-- `SKILL.md`：Agent 的高层研究步骤；
+- `workflow.md`：Agent 的高层研究步骤；
 - `recipe.yaml`：名称、状态、数据依赖和产出类型；
 - `src/`：最小可运行实现；
 - `example/`：真实或明确脱敏的输入、结果和交付物。
@@ -39,3 +39,5 @@ Recipe 只有满足以下条件才能从 `draft` 改为 `verified`：
 - 关键结论具有证据；
 - PPT、PDF 或 Dashboard 可以直接查看；
 - 仓库中没有密钥、用户数据或无权公开的数据。
+
+每个 Recipe 只允许链接一个 Agent 文档入口：`/docs/agent/llms.txt`。工具、字段、计费和错误正文不得复制进 Cookbook。

@@ -9,6 +9,7 @@ Asklear Cookbook 收录可运行的商业研究方案。每个 Recipe 从一个�
 | Recipe | Output | Status |
 | --- | --- | --- |
 | [Category Market Analysis](recipes/category-market-analysis/) | PPT | Draft |
+| [Brand Competitive Analysis](recipes/brand-competitive-analysis/) | PPT | Draft |
 
 更多计划中的场景见 [`recipes/README.md`](recipes/README.md)。
 
@@ -17,7 +18,7 @@ Asklear Cookbook 收录可运行的商业研究方案。每个 Recipe 从一个�
 1. 打开 Recipe，先看结果预览和交付物。
 2. 复制页面中的“Use with your Agent”指令。
 3. 告诉 Agent 研究对象、时间范围和重点问题。
-4. Agent 按 `SKILL.md` 完成研究并交付 PPT、PDF 或 Dashboard。
+4. Agent 按 `workflow.md` 完成研究并交付 PPT、PDF 或 Dashboard。
 
 普通用户只需要阅读 Recipe 页面；其他文件用于 Agent 执行和开发维护。
 
@@ -38,13 +39,13 @@ Asklear Cookbook 收录可运行的商业研究方案。每个 Recipe 从一个�
 每个 Recipe 只维护：
 
 - `README.md`：结果预览和可以直接复制给 Agent 的使用指令；
-- `SKILL.md`：Agent 的研究流程；
+- `workflow.md`：Agent 的研究流程；
 - `recipe.yaml`：状态、数据依赖和产出类型；
 - `src/`：查询、计算和生成代码；
 - `example/`：真实输入、研究结果和交付物。
 
 ## Agent Docs
 
-接入方式、工具参数、数据字段、指标口径、计费和错误恢复以 [中国站 Agent Docs](https://dashboard.asklear.cn/docs/agent) 或 [国际站 Agent Docs](https://dashboard.asklearai.com/docs/agent) 为准，本仓库不复制维护。
+接入方式、工具参数、数据字段、指标口径、计费和错误恢复只从 Agent 的单一索引进入：[中国站](https://dashboard.asklear.cn/docs/agent/llms.txt) / [国际站](https://dashboard.asklearai.com/docs/agent/llms.txt)。本仓库不复制这些契约。
 
 开发和维护规则见 [`AGENTS.md`](AGENTS.md)。

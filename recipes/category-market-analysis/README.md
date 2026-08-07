@@ -10,11 +10,11 @@
 
 ## Use with your Agent
 
-使用前先按 [Asklear Agent Docs](https://dashboard.asklear.cn/docs/agent) 完成接入，然后把下面的指令发给 Agent：
+使用前先连接 Asklear MCP，然后把下面的指令发给 Agent：
 
 ```text
-请读取下面的 Skill，并使用 Asklear 完成类目市场分析：
-https://raw.githubusercontent.com/Asklear/asklear-cookbook/main/recipes/category-market-analysis/SKILL.md
+请读取下面的 workflow，并使用 Asklear 完成类目市场分析：
+https://raw.githubusercontent.com/Asklear/asklear-cookbook/main/recipes/category-market-analysis/workflow.md
 
 - 平台：京东
 - 类目：<填写类目>

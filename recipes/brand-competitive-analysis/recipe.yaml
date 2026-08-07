@@ -1,0 +1,8 @@
+id: brand-competitive-analysis
+title: Brand Competitive Analysis
+status: draft
+datasets:
+  - jd
+  - tmall
+outputs:
+  - deck

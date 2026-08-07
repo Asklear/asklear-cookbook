@@ -1,9 +1,6 @@
----
-name: category-market-analysis
-description: Analyze an e-commerce category's market size, trend, and competitive structure, then produce a decision-ready research deck.
----
-
 # Category Market Analysis
+
+Asklear capability and query rules: https://dashboard.asklear.cn/docs/agent/llms.txt
 
 ## Outcome
 

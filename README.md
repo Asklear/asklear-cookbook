@@ -46,6 +46,6 @@ Asklear Cookbook 收录可运行的商业研究方案。每个 Recipe 从一个�
 
 ## Agent Docs
 
-接入方式、工具参数、数据字段、指标口径、计费和错误恢复只从 Agent 的单一索引进入：[中国站](https://dashboard.asklear.cn/docs/agent/llms.txt) / [国际站](https://dashboard.asklearai.com/docs/agent/llms.txt)。本仓库不复制这些契约。
+接入方式、工具参数、数据字段、指标口径、计费和错误恢复以当前区域唯一的 Agent Docs 入口为准：[中国站](https://dashboard.asklear.cn/docs/agent) / [国际站](https://dashboard.asklearai.com/docs/agent)。同一个 URL 对人类显示网页、对 Agent 返回机器可读 Markdown；本仓库只维护完整研究流程和交付物，不复制这些能力事实。
 
 开发和维护规则见 [`AGENTS.md`](AGENTS.md)。

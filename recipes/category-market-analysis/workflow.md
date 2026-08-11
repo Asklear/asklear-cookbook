@@ -1,6 +1,6 @@
 # Category Market Analysis
 
-Asklear capability and query rules: https://dashboard.asklear.cn/docs/agent/llms.txt
+Asklear capability and query rules: https://dashboard.asklear.cn/docs/agent
 
 ## Outcome
 

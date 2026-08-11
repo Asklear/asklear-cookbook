@@ -1,6 +1,6 @@
 # Asklear Cookbook 维护规则
 
-本仓库用于交付可运行的商业研究 Recipe。目标不是展示 API 或搭建 Demo App，而是生成可以用于决策的 PPT、PDF 或 Dashboard。
+本仓库用于交付可运行的商业研究 Recipe。目标不是展示 API 或搭建 Demo App，而是生成可以用于决策的 HTML、PDF、PPT 或 Dashboard。
 
 ## 原则
 
@@ -37,7 +37,15 @@ Recipe 只有满足以下条件才能从 `draft` 改为 `verified`：
 - README 中的 Agent 指令可以直接使用；
 - 示例来自一次真实运行；
 - 关键结论具有证据；
-- PPT、PDF 或 Dashboard 可以直接查看；
+- HTML、PDF、PPT 或 Dashboard 可以直接查看；
 - 仓库中没有密钥、用户数据或无权公开的数据。
+
+发布前运行：
+
+```bash
+node scripts/check-recipes.mjs
+```
+
+合并到 `main` 后运行 `node scripts/check-recipes.mjs --published`，确认 README 中的公开 Workflow 与仓库版本一致。
 
 每个 Recipe 只允许链接当前区域唯一的 Agent 文档入口：`/docs/agent`。工具、字段、计费和错误正文不得复制进 Cookbook。

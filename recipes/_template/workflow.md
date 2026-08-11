@@ -12,7 +12,7 @@ Asklear capability and query rules: https://dashboard.asklear.cn/docs/agent
 2. 按当前 Agent Docs 和 MCP instructions 获取数据。
 3. 完成必要计算，区分服务指标、计算结果和分析判断。
 4. 保存来源、时间、范围和限制。
-5. 生成约定的 PPT、PDF 或 Dashboard。
+5. 生成约定的 HTML、PDF、PPT 或 Dashboard。
 
 ## Failure behavior
 

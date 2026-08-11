@@ -1,0 +1,143 @@
+{
+  "recipe_id": "brand-competitive-analysis",
+  "executed_at": "2026-08-07",
+  "input": {
+    "brand": "睡洞 EVERYTHINK",
+    "platforms": ["jd", "tmall"],
+    "requested_period": "2026-01/2026-06",
+    "focus": "U 型枕品类的竞争位置、份额变化与增长机制"
+  },
+  "scope": {
+    "actual_period": "2026-01/2026-06",
+    "data_through": "2026-06",
+    "metric": "gmv",
+    "grain": "month",
+    "category": {
+      "jd": "category_l3 = U型枕",
+      "tmall": "category_l3 = U型枕/便携枕"
+    }
+  },
+  "entity_alignment": [
+    {
+      "dataset": "jd",
+      "brand_values": ["睡洞", "EVERYTHINK", "脑洞氛子/EVERYTHINK"],
+      "verification": "候选别名通过代表商品标题核验后纳入"
+    },
+    {
+      "dataset": "tmall",
+      "brand_values": ["EVERYTHINK/睡洞", "EVERYTHINK", "EVERYTHINK（枕头）"],
+      "verification": "平台原始值分别保留并合并计算"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "source": "Asklear JD monthly product sales",
+      "scope": "京东，U型枕，2026-01 与 2026-06，品牌 GMV ÷ 品类 GMV",
+      "kind": "deterministic_calculation",
+      "values": {"share_2026_01": 0.079, "share_2026_06": 0.242},
+      "limitation": "份额由同口径聚合指标计算"
+    },
+    {
+      "id": "E2",
+      "source": "Asklear Tmall monthly product sales",
+      "scope": "天猫，U型枕/便携枕，2026-01 至 2026-06，品牌 GMV ÷ 品类 GMV",
+      "kind": "deterministic_calculation",
+      "values": {"share_2026_01": 0.147, "share_2026_06": 0.145, "observed_range": "14%-16%"},
+      "limitation": "份额由同口径聚合指标计算"
+    },
+    {
+      "id": "E3",
+      "source": "Asklear JD monthly product sales",
+      "scope": "京东，睡洞 U型枕，同一商品，2026-01 对比 2026-06",
+      "kind": "service_metric_and_calculation",
+      "values": [
+        {"product": "护颈鸵鸟颈枕", "asp_2026_01": 315, "asp_2026_06": 202, "change": -0.36},
+        {"product": "旅行 U型枕", "asp_2026_01": 176, "asp_2026_06": 134, "change": -0.24}
+      ],
+      "limitation": "ASP 为月度 GMV ÷销量，不等于挂牌价"
+    },
+    {
+      "id": "E4",
+      "source": "Asklear JD monthly product sales",
+      "scope": "京东，睡洞 U型枕，2026-06 头部商品",
+      "kind": "service_metric",
+      "values": {"new_low_price_product": "充气旅行护颈枕", "asp": 76, "units": 3633},
+      "limitation": "新品判断基于 1 月与 6 月返回的头部商品集合"
+    },
+    {
+      "id": "E5",
+      "source": "Asklear Tmall monthly product sales",
+      "scope": "天猫，U型枕/便携枕，2026-06 Top 50 商品按 ASP 分桶",
+      "kind": "local_calculation",
+      "values": {"under_40_units_share": 0.63, "price_160_229_gmv_share": 0.31},
+      "limitation": "只代表 Top 50 商品，不是全量价格带"
+    },
+    {
+      "id": "E6",
+      "source": "Asklear Tmall monthly product sales",
+      "scope": "天猫，U型枕/便携枕，2026-06，睡洞头部商品与 MUJI 品牌快照",
+      "kind": "service_metric",
+      "values": {"sleep_brand_top_product_gmv_cny": 1275000, "muji_brand_gmv_cny": 970000},
+      "limitation": "比较的是一个商品 ID 与当月已对齐品牌聚合值，不代表长期表现"
+    },
+    {
+      "id": "E7",
+      "source": "Asklear Tmall monthly product sales",
+      "scope": "天猫，U型枕/便携枕，松伴 SOMB，2026-01 与 2026-06",
+      "kind": "service_metric_and_calculation",
+      "values": {"gmv_2026_01_cny": 530000, "gmv_2026_06_cny": 902000, "asp_2026_06_cny": 347},
+      "limitation": "单一品牌和头部商品信号不能证明整个超高端价格带已形成规模"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "statement": "睡洞的增长引擎在京东，天猫同期份额基本稳定。",
+      "kind": "agent_judgment",
+      "evidence_ids": ["E1", "E2"]
+    },
+    {
+      "id": "F2",
+      "statement": "京东增长同时来自旗舰商品降价与新增低价商品，不能只解释为产品结构变化。",
+      "kind": "agent_judgment",
+      "evidence_ids": ["E3", "E4"]
+    },
+    {
+      "id": "F3",
+      "statement": "天猫头部商品呈低价走量与品质价格带并存的结构。",
+      "kind": "agent_judgment",
+      "evidence_ids": ["E5"]
+    },
+    {
+      "id": "F4",
+      "statement": "睡洞天猫成交高度依赖超级单品，单一经典款当月成交额高于 MUJI 品牌聚合值。",
+      "kind": "agent_judgment",
+      "evidence_ids": ["E6"]
+    },
+    {
+      "id": "F5",
+      "statement": "超高端价格带出现增长信号，但证据仍集中于松伴单一品牌。",
+      "kind": "agent_judgment",
+      "evidence_ids": ["E7"]
+    }
+  ],
+  "limitations": [
+    "示例是 2026-01 至 2026-06 的历史快照，不代表当前市场。",
+    "数据不含评价、流量、库存和人群画像。",
+    "价格带只基于 Top 50 商品。",
+    "京东部分竞品存在品牌多写法造成的跨月缺口，只作方向性参考。",
+    "相关性和商品结构变化不直接证明商业因果。"
+  ],
+  "report_claims": [
+    {"location": "执行摘要 1", "finding_ids": ["F1"]},
+    {"location": "执行摘要 2", "finding_ids": ["F2"]},
+    {"location": "执行摘要 3", "finding_ids": ["F4"]},
+    {"location": "执行摘要 4", "finding_ids": ["F3", "F5"]}
+  ],
+  "deliverables": ["report.html", "report.pdf"],
+  "artifact_hashes": {
+    "report.html": "sha256:e386ab4eb94408bffe9a57f1de99375c923dfaa6c4769c61b53d449903401581",
+    "report.pdf": "sha256:83d3f490948d1bbcfa3c3b76767b37081fe1d29aea910cd5d49ce47a1d0151ca"
+  }
+}

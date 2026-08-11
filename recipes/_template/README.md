@@ -4,7 +4,7 @@
 
 ## Result preview
 
-展示最终 PPT、PDF 或 Dashboard，并说明示例是真实还是脱敏结果。
+展示最终 HTML、PDF、PPT 或 Dashboard，并说明示例是真实还是脱敏结果。
 
 ## Use with your Agent
 

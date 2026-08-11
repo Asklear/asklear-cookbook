@@ -2,14 +2,15 @@
 
 Production-ready recipes for commercial research with AI Agents.
 
-Asklear Cookbook 收录可运行的商业研究方案。每个 Recipe 从一个真实业务问题出发，最终交付可以用于汇报或持续跟踪的 PPT、PDF 或 Dashboard。
+Asklear Cookbook 收录可运行的商业研究方案。每个 Recipe 从一个真实业务问题出发，最终交付可以用于决策的 HTML、PDF、PPT 或 Dashboard。
 
 ## Recipes
 
 | Recipe | Output | Status |
 | --- | --- | --- |
 | [Category Market Analysis](recipes/category-market-analysis/) | PPT | Draft |
-| [Brand Competitive Analysis](recipes/brand-competitive-analysis/) | PPT | Draft |
+| [Brand Competitive Analysis](recipes/brand-competitive-analysis/) | HTML / PDF | Verified |
+| [Emerging Market Validation](recipes/emerging-market-validation/) | HTML / PDF | Verified |
 
 更多计划中的场景见 [`recipes/README.md`](recipes/README.md)。
 
@@ -17,8 +18,9 @@ Asklear Cookbook 收录可运行的商业研究方案。每个 Recipe 从一个�
 
 1. 打开 Recipe，先看结果预览和交付物。
 2. 复制页面中的“Use with your Agent”指令。
-3. 告诉 Agent 研究对象、时间范围和重点问题。
-4. Agent 按 `workflow.md` 完成研究并交付 PPT、PDF 或 Dashboard。
+3. 告诉 Agent 研究对象；平台、时间和重点问题可以选填。
+4. Agent 自动确定默认范围，先完成核心分析，需要额外下钻时再请求确认。
+5. 最终获得 HTML、PDF、PPT 或 Dashboard，以及数据口径和限制。
 
 普通用户只需要阅读 Recipe 页面；其他文件用于 Agent 执行和开发维护。
 

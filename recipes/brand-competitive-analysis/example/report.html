@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U型枕品类作战报告 · 睡洞 EVERYTHINK · 2026 H1</title>
+<style>
+  :root{
+    --ink:#1b1e28; --muted:#727888; --faint:#9aa0ac;
+    --line:#e9eaef; --line2:#f0f1f4; --bg:#eef0f3; --paper:#fff;
+    --accent:#3a56d4; --accent-soft:#eef1fd;
+    --jd:#c33127; --tm:#c8791b;
+    --up:#1f9d57; --down:#c33127;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .page{max-width:940px;margin:0 auto;background:var(--paper);
+    box-shadow:0 1px 40px rgba(20,25,45,.06);}
+  .pad{padding:0 56px}
+  @media(max-width:680px){.pad{padding:0 22px}}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* header */
+  .masthead{padding:52px 56px 30px;border-bottom:3px solid var(--ink)}
+  @media(max-width:680px){.masthead{padding:36px 22px 24px}}
+  .masthead .kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700}
+  .masthead h1{font-size:30px;margin:10px 0 8px;letter-spacing:.5px;font-weight:800}
+  .masthead .dek{color:var(--muted);font-size:15px;max-width:64ch}
+  .masthead .facts{margin-top:18px;display:flex;flex-wrap:wrap;gap:20px;font-size:12.5px;color:var(--faint)}
+  .masthead .facts b{color:var(--ink);font-weight:600}
+
+  /* section rhythm */
+  section{padding:40px 56px}
+  @media(max-width:680px){section{padding:32px 22px}}
+  section + section{border-top:1px solid var(--line)}
+  .sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:4px}
+  .sec-h .no{font-size:13px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}
+  .sec-h h2{font-size:22px;font-weight:800;margin:0}
+  .sec-lead{color:var(--muted);font-size:14px;margin:2px 0 22px}
+
+  h3{font-size:15px;font-weight:700;margin:30px 0 12px;color:var(--ink);
+    padding-bottom:7px;border-bottom:1px solid var(--line2)}
+  h3:first-of-type{margin-top:6px}
+  p{margin:10px 0}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr;gap:24px}}
+
+  /* takeaway line */
+  .take{margin:18px 0 0;padding:13px 18px;background:var(--accent-soft);
+    border-radius:8px;font-size:14px}
+  .take b{color:var(--accent)}
+
+  /* exec KPIs */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  @media(max-width:680px){.kpis{grid-template-columns:1fr 1fr}}
+  .kpi{padding:18px 20px;border-right:1px solid var(--line)}
+  .kpi:nth-child(4){border-right:0}
+  @media(max-width:680px){.kpi:nth-child(2){border-right:0}.kpi{border-top:1px solid var(--line)}.kpi:nth-child(1),.kpi:nth-child(2){border-top:0}}
+  .kpi .l{font-size:12px;color:var(--muted)}
+  .kpi .v{font-size:26px;font-weight:800;line-height:1.25;margin-top:3px}
+  .kpi .d{font-size:12px;margin-top:3px;color:var(--faint)}
+  .kpi .d.u{color:var(--up)} .kpi .d.n{color:var(--down)}
+
+  /* insight list */
+  .insights{list-style:none;padding:0;margin:26px 0 0}
+  .insights li{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line2)}
+  .insights li:first-child{border-top:0}
+  .insights .n{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);
+    color:var(--accent);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .insights .t{font-size:14.5px}
+  .insights .t b{font-weight:700}
+
+  /* tables */
+  .tblwrap{overflow-x:auto;margin:12px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line2);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  thead th{color:var(--muted);font-weight:600;font-size:12px;border-bottom:1px solid var(--line);
+    text-transform:none;letter-spacing:0}
+  tbody tr:hover{background:#fafbfd}
+  tfoot td{font-weight:700;border-top:1px solid var(--line);border-bottom:0}
+  .num{font-variant-numeric:tabular-nums}
+  table.sortable thead th{cursor:pointer;user-select:none}
+  table.sortable thead th::after{content:"\2195";color:var(--faint);font-size:10px;margin-left:5px}
+  table.sortable thead th[data-asc="true"]::after{content:"\2191";color:var(--accent)}
+  table.sortable thead th[data-asc="false"]::after{content:"\2193";color:var(--accent)}
+  .lead-row td{background:var(--accent-soft)}
+  .lead-row td:first-child{font-weight:700}
+
+  /* chips */
+  .chip{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:4px;vertical-align:middle}
+  .chip.jd{background:#f7e3e1;color:var(--jd)}
+  .chip.tm{background:#f6e7d2;color:#9c5c11}
+  .chip.o{background:#eef0f4;color:var(--muted)}
+
+  /* bar chart */
+  .chart{margin:10px 0 4px}
+  .chart .clabel{font-size:12.5px;color:var(--muted);margin-bottom:8px}
+  .row{display:grid;grid-template-columns:34px 1fr 76px;align-items:center;gap:10px;margin:5px 0}
+  .row .m{font-size:11.5px;color:var(--faint);text-align:right}
+  .track{background:var(--line2);border-radius:4px;height:14px;overflow:hidden}
+  .fill{height:14px;border-radius:4px}
+  .row .val{font-size:12.5px;text-align:right;font-variant-numeric:tabular-nums}
+
+  /* sparkline for brand modules */
+  .spark{display:flex;align-items:flex-end;gap:3px;height:34px}
+  .spark span{flex:1;background:var(--line);border-radius:2px 2px 0 0;min-height:2px}
+  .spark.up span{background:#bcd7c6} .spark.up span:last-child{background:var(--up)}
+  .spark.dn span{background:#e6c9c6} .spark.dn span:last-child{background:var(--down)}
+  .spark.fl span{background:#d9dce3} .spark.fl span:last-child{background:var(--muted)}
+  .sparkcap{font-size:11px;color:var(--faint);margin-top:4px}
+
+  /* price ladder */
+  .ladder{margin:14px 0 6px}
+  .lrow{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:12px;margin:7px 0;font-size:12.5px}
+  .ltrack{position:relative;height:20px;background:linear-gradient(90deg,#f5f6f8,#eceef3);border-radius:5px}
+  .ldot{position:absolute;top:50%;transform:translate(-50%,-50%);height:16px;border-radius:16px;
+    display:flex;align-items:center;padding:0 8px;color:#fff;font-size:10.5px;font-weight:700;white-space:nowrap}
+  .laxis{display:grid;grid-template-columns:96px 1fr}
+  .laxis .a{display:flex;justify-content:space-between;color:var(--faint);font-size:10.5px;margin-top:3px}
+
+  /* brand modules */
+  .brand{border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:16px 0}
+  .brand.hero{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+  .brand .bh{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+  .brand .bn{font-size:17px;font-weight:800}
+  .brand .role{font-size:11.5px;font-weight:700;color:var(--muted);background:var(--line2);padding:2px 9px;border-radius:20px}
+  .brand .one{color:var(--muted);font-size:13.5px;margin:8px 0 14px}
+  .bgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
+  @media(max-width:680px){.bgrid{grid-template-columns:1fr;gap:16px}}
+  .stat{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px}
+  .stat .s .sv{font-size:17px;font-weight:800}
+  .stat .s .sl{font-size:11px;color:var(--muted)}
+  .threat{font-size:12.5px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line2)}
+  .threat b{font-weight:700}
+  .t-hi{color:var(--down)} .t-mid{color:var(--tm)} .t-lo{color:var(--up)}
+
+  /* recommendations */
+  .recs{counter-reset:r;list-style:none;padding:0;margin:8px 0 0}
+  .recs li{position:relative;padding:14px 0 14px 44px;border-top:1px solid var(--line2)}
+  .recs li:first-child{border-top:0}
+  .recs li::before{counter-increment:r;content:counter(r);position:absolute;left:0;top:12px;
+    width:28px;height:28px;background:var(--ink);color:#fff;border-radius:7px;font-weight:800;font-size:13px;
+    display:flex;align-items:center;justify-content:center}
+  .recs b{font-weight:700}
+
+  .note{font-size:12px;color:var(--faint);margin-top:8px}
+  .footer{padding:30px 56px 46px;background:#fafbfc;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.8}
+  @media(max-width:680px){.footer{padding:26px 22px}}
+  code{background:#f0f1f4;padding:1px 5px;border-radius:4px;font-size:12px}
+
+  /* ===== print / PDF ===== */
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+  @page{size:A4;margin:12mm 11mm}
+  @media print{
+    html,body{background:#fff}
+    .page{box-shadow:none;max-width:none;width:auto}
+    .masthead{padding:0 0 20px}
+    section{padding:22px 0}
+    .footer{padding:20px 0 0;background:#fff}
+    section,.brand,.kpi,table,.tblwrap,.chart,.take,.ladder,.insights li,.recs li{break-inside:avoid}
+    .sec-h,h3{break-after:avoid}
+    a{color:var(--ink)}
+    .brand{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== Masthead ===== -->
+  <div class="masthead">
+    <div class="kicker">Category Strategy Brief</div>
+    <h1>U型枕品类作战报告</h1>
+    <div class="dek">面向睡洞 EVERYTHINK 品牌战略部 · 京东 + 天猫「U型枕 / 旅行颈枕」品类全景、竞争动态与重点品牌拆解</div>
+    <div class="facts">
+      <span>数据区间 <b>2026-01 ~ 06</b></span>
+      <span>口径 <b>券后GMV / 销量 / 均价</b></span>
+      <span>水位截至 <b>2026-06</b></span>
+      <span>生成 <b>2026-08-07</b></span>
+    </div>
+  </div>
+
+  <!-- ===== 1 执行摘要 ===== -->
+  <section>
+    <div class="sec-h"><span class="no">01</span><h2>执行摘要</h2></div>
+    <div class="sec-lead">四个反直觉的判断，决定下半年资源该压在哪里。</div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="l">京东份额 · 6月</div><div class="v" style="color:var(--jd)">24.2%</div><div class="d u">▲ 半年 7.9→24.2%</div></div>
+      <div class="kpi"><div class="l">天猫份额 · 6月</div><div class="v" style="color:var(--tm)">14.5%</div><div class="d">— 半年停滞 14–16%</div></div>
+      <div class="kpi"><div class="l">品类排名</div><div class="v">No.1</div><div class="d">京东 / 天猫 双第一</div></div>
+      <div class="kpi"><div class="l">京东均价</div><div class="v" style="color:var(--jd)">−39%</div><div class="d n">¥183 → ¥112</div></div>
+    </div>
+
+    <ul class="insights">
+      <li><span class="n">1</span><div class="t"><b>增长引擎是京东，不是天猫。</b>天猫盘子大 4.3 倍，直觉上是主战场，但睡洞在天猫份额半年<b>原地踏步</b>（14–16%）；真正的爆发在京东——份额半年翻 3 倍到 24.2%。战略重心正在转移。</div></li>
+      <li><span class="n">2</span><div class="t"><b>京东靠"旗舰降价 + 加走量款"双管齐下抢份额。</b>已用单品逐月价格验证：旗舰鸵鸟枕<b>同款</b>从 ¥315 砍到 ¥202（−36%），同时新增 ¥76 充气款走量；品牌均价整体 ¥183→¥112、销量翻 4.2 倍，而大盘同期<b>萎缩 16%</b>（详见 3.3）。</div></li>
+      <li><span class="n">3</span><div class="t"><b>单个 SKU 比整个 MUJI 还大。</b>睡洞天猫「经典款」一款单月 ¥127.5万，超过 MUJI 在该品类的全部。品牌靠<b>超级大单品</b>扛旗，而非长尾铺货。</div></li>
+      <li><span class="n">4</span><div class="t"><b>哑铃型市场，且高端带正在变热。</b>钱集中在 ¥140–220（品质带，睡洞主场）与 &lt;¥40（白牌走量），中间稀薄。¥340+ 超高端仅松伴一家却半年翻倍——是睡洞唯一的向上白点，但窗口在收窄。</div></li>
+    </ul>
+  </section>
+
+  <!-- ===== 2 口径 ===== -->
+  <section>
+    <div class="sec-h"><span class="no">02</span><h2>数据口径与对齐</h2></div>
+    <div class="sec-lead">先明确数据能说什么、不能说什么。</div>
+    <div class="take" style="background:#fff7ec;border:1px solid #f0dcc0">
+      <b style="color:var(--tm)">数据性质</b> · 销量数据来源于电商平台<b>公开页面信息</b>并经简单脱敏，<b>不含退货退款</b>，因此<b>不等于平台真实成交口径</b>。适合用于<b>趋势、占比与定性分析</b>，不宜作为绝对销售额的财务依据。
+    </div>
+    <div class="grid2" style="margin-top:20px">
+      <div>
+        <h3 style="margin-top:0">品类对齐</h3>
+        <p style="margin:0;font-size:13.5px"><span class="chip jd">京东</span> <code>category_l3 = "U型枕"</code><br>
+        <span class="chip tm">天猫</span> <code>category_l3 = "U型枕/便携枕"</code></p>
+        <p class="note">份额 = 品牌 GMV ÷ 品类大盘 GMV，月粒度。</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0">品牌归并（多写法合并）</h3>
+        <p style="margin:0;font-size:13.5px"><span class="chip jd">京东</span> 睡洞 · EVERYTHINK · 脑洞氛子/EVERYTHINK<br>
+        <span class="chip tm">天猫</span> EVERYTHINK/睡洞 · EVERYTHINK · EVERYTHINK（枕头）</p>
+        <p class="note">经 Top SKU 标题核验为同一品牌。注意：竞品同样存在多写法，京东部分竞品逐月数据因此不完整（见 3.2 附注）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3 品类概况 ===== -->
+  <section>
+    <div class="sec-h"><span class="no">03</span><h2>品类概况</h2></div>
+    <div class="sec-lead">市场怎么走、份额怎么变、什么价、卖什么、卖给谁。</div>
+
+    <!-- 3.1 大盘 -->
+    <h3>3.1 大盘月度趋势</h3>
+    <div class="grid2">
+      <div class="chart">
+        <div class="clabel"><span class="chip tm">天猫</span> 大盘 GMV（万元）· 6月旺季 +24%</div>
+        <div class="row"><span class="m">1月</span><div class="track"><div class="fill" style="width:78%;background:var(--tm)"></div></div><span class="val">1,975</span></div>
+        <div class="row"><span class="m">2月</span><div class="track"><div class="fill" style="width:84%;background:var(--tm)"></div></div><span class="val">2,111</span></div>
+        <div class="row"><span class="m">3月</span><div class="track"><div class="fill" style="width:67%;background:var(--tm)"></div></div><span class="val">1,691</span></div>
+        <div class="row"><span class="m">4月</span><div class="track"><div class="fill" style="width:69%;background:var(--tm)"></div></div><span class="val">1,751</span></div>
+        <div class="row"><span class="m">5月</span><div class="track"><div class="fill" style="width:80%;background:var(--tm)"></div></div><span class="val">2,030</span></div>
+        <div class="row"><span class="m">6月</span><div class="track"><div class="fill" style="width:100%;background:var(--tm)"></div></div><span class="val">2,522</span></div>
+      </div>
+      <div class="chart">
+        <div class="clabel"><span class="chip jd">京东</span> 大盘 GMV（万元）· 半年萎缩 −16%</div>
+        <div class="row"><span class="m">1月</span><div class="track"><div class="fill" style="width:100%;background:var(--jd)"></div></div><span class="val">694</span></div>
+        <div class="row"><span class="m">2月</span><div class="track"><div class="fill" style="width:73%;background:var(--jd)"></div></div><span class="val">508</span></div>
+        <div class="row"><span class="m">3月</span><div class="track"><div class="fill" style="width:66%;background:var(--jd)"></div></div><span class="val">460</span></div>
+        <div class="row"><span class="m">4月</span><div class="track"><div class="fill" style="width:69%;background:var(--jd)"></div></div><span class="val">476</span></div>
+        <div class="row"><span class="m">5月</span><div class="track"><div class="fill" style="width:86%;background:var(--jd)"></div></div><span class="val">596</span></div>
+        <div class="row"><span class="m">6月</span><div class="track"><div class="fill" style="width:84%;background:var(--jd)"></div></div><span class="val">585</span></div>
+      </div>
+    </div>
+    <div class="take"><b>结论</b> · 天猫是京东的 4.3 倍且旺季弹性大；京东盘子小且在萎缩——所以京东的增量只能靠抢份额。这正是睡洞在做的事。</div>
+
+    <!-- 3.2 份额动态 -->
+    <h3>3.2 份额与竞争动态</h3>
+    <div class="grid2">
+      <div class="chart">
+        <div class="clabel"><span class="chip jd">京东</span> 睡洞份额 · 陡升 🔥</div>
+        <div class="row"><span class="m">1月</span><div class="track"><div class="fill" style="width:33%;background:var(--jd)"></div></div><span class="val">7.9%</span></div>
+        <div class="row"><span class="m">2月</span><div class="track"><div class="fill" style="width:40%;background:var(--jd)"></div></div><span class="val">9.6%</span></div>
+        <div class="row"><span class="m">3月</span><div class="track"><div class="fill" style="width:44%;background:var(--jd)"></div></div><span class="val">10.7%</span></div>
+        <div class="row"><span class="m">4月</span><div class="track"><div class="fill" style="width:70%;background:var(--jd)"></div></div><span class="val">16.9%</span></div>
+        <div class="row"><span class="m">5月</span><div class="track"><div class="fill" style="width:90%;background:var(--jd)"></div></div><span class="val">21.9%</span></div>
+        <div class="row"><span class="m">6月</span><div class="track"><div class="fill" style="width:100%;background:var(--jd)"></div></div><span class="val">24.2%</span></div>
+      </div>
+      <div class="chart">
+        <div class="clabel"><span class="chip tm">天猫</span> 睡洞份额 · 稳态 🛡️</div>
+        <div class="row"><span class="m">1月</span><div class="track"><div class="fill" style="width:61%;background:var(--tm)"></div></div><span class="val">14.7%</span></div>
+        <div class="row"><span class="m">2月</span><div class="track"><div class="fill" style="width:66%;background:var(--tm)"></div></div><span class="val">15.9%</span></div>
+        <div class="row"><span class="m">3月</span><div class="track"><div class="fill" style="width:57%;background:var(--tm)"></div></div><span class="val">13.9%</span></div>
+        <div class="row"><span class="m">4月</span><div class="track"><div class="fill" style="width:61%;background:var(--tm)"></div></div><span class="val">14.8%</span></div>
+        <div class="row"><span class="m">5月</span><div class="track"><div class="fill" style="width:57%;background:var(--tm)"></div></div><span class="val">13.9%</span></div>
+        <div class="row"><span class="m">6月</span><div class="track"><div class="fill" style="width:60%;background:var(--tm)"></div></div><span class="val">14.5%</span></div>
+      </div>
+    </div>
+    <p style="font-size:13.5px;margin-top:18px"><b>天猫竞品在动什么？</b>（月度 GMV，万元）高端带集体升温，走量盘稳定：</p>
+    <div class="tblwrap">
+      <table class="sortable">
+        <thead><tr><th>品牌</th><th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th><th>半年走势</th></tr></thead>
+        <tbody>
+          <tr class="lead-row"><td>睡洞 EVERYTHINK</td><td class="num">289</td><td class="num">336</td><td class="num">236</td><td class="num">259</td><td class="num">282</td><td class="num">366</td><td>龙头稳增</td></tr>
+          <tr><td>名创优品 MINISO</td><td class="num">202</td><td class="num">222</td><td class="num">147</td><td class="num">161</td><td class="num">178</td><td class="num">181</td><td>走量盘稳定</td></tr>
+          <tr><td>MUJI</td><td class="num">25</td><td class="num">36</td><td class="num">31</td><td class="num">23</td><td class="num">54</td><td class="num">97</td><td style="color:var(--up)">▲ 6月暴涨 +81%</td></tr>
+          <tr><td>松伴 SOMB</td><td class="num">53</td><td class="num">73</td><td class="num">65</td><td class="num">71</td><td class="num">83</td><td class="num">90</td><td style="color:var(--up)">▲ 稳步上攻</td></tr>
+          <tr><td>野兽派 tbh</td><td class="num">114</td><td class="num">110</td><td class="num">99</td><td class="num">85</td><td class="num">90</td><td class="num">91</td><td style="color:var(--down)">▽ 缓降</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="take"><b>结论</b> · 天猫高端带（睡洞 / MUJI / 松伴）在集体扩容，6 月尤其明显；这意味着睡洞天猫的"稳态"背后是<b>竞争在加剧</b>，守成也需投入。京东则相反：在萎缩市场里，睡洞靠整合碎片长尾 + 蚕食平台自有的京造（1月¥108万 → 6月¥60万）把份额做到 24%。</div>
+    <p class="note">附注：京东多个竞品（京造 / 名创 / MUJI）存在品牌多写法，按单一写法取数在部分月份缺失，故京东竞品逐月趋势仅作方向性参考；天猫竞品数据完整（OstrichPillow 除外，缺 1、5 月）。</p>
+
+    <!-- 3.3 价格 -->
+    <h3>3.3 价格带与价格策略</h3>
+    <p style="font-size:13.5px;margin-top:2px">各品牌按 6 月均价定位（气泡即均价）：</p>
+    <div class="ladder">
+      <div class="lrow"><span>名创优品</span><div class="ltrack"><span class="ldot" style="left:9%;background:#9aa0ac">¥30</span></div></div>
+      <div class="lrow"><span>京造 <span class="chip jd">JD</span></span><div class="ltrack"><span class="ldot" style="left:18%;background:#9aa0ac">¥58</span></div></div>
+      <div class="lrow"><span>MUJI</span><div class="ltrack"><span class="ldot" style="left:23%;background:#7c8393">¥83</span></div></div>
+      <div class="lrow"><span>睡洞 <span class="chip jd">JD</span></span><div class="ltrack"><span class="ldot" style="left:31%;background:var(--jd)">¥112</span></div></div>
+      <div class="lrow"><span>睡洞 <span class="chip tm">天猫</span></span><div class="ltrack"><span class="ldot" style="left:41%;background:var(--accent)">¥148</span></div></div>
+      <div class="lrow"><span>OstrichPillow</span><div class="ltrack"><span class="ldot" style="left:45%;background:#7c8393">¥162</span></div></div>
+      <div class="lrow"><span>野兽派 tbh</span><div class="ltrack"><span class="ldot" style="left:51%;background:#7c8393">¥184</span></div></div>
+      <div class="lrow"><span>松伴 SOMB</span><div class="ltrack"><span class="ldot" style="left:97%;background:#1b1e28">¥349</span></div></div>
+    </div>
+    <div class="laxis"><span></span><div class="a"><span>¥0</span><span>¥90</span><span>¥180</span><span>¥270</span><span>¥360</span></div></div>
+
+    <div class="clabel" style="margin-top:26px">价格带分布 · 天猫头部 Top50（约占品类 GMV 60%）· 按价格从低到高</div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>价格带</th><th style="text-align:left">定位</th><th>GMV(万)</th><th>GMV占比</th><th>销量占比</th><th style="text-align:left">睡洞</th></tr></thead>
+        <tbody>
+          <tr><td>&lt;¥40</td><td style="text-align:left">白牌走量 · 引流</td><td class="num">404</td><td class="num">27%</td><td class="num">63%</td><td style="text-align:left;color:var(--faint)">不参与</td></tr>
+          <tr><td>¥40–99</td><td style="text-align:left">中端（MUJI 为主）</td><td class="num">221</td><td class="num">15%</td><td class="num">14%</td><td style="text-align:left">少量</td></tr>
+          <tr class="lead-row"><td>¥100–159</td><td style="text-align:left">品质入门</td><td class="num">328</td><td class="num">22%</td><td class="num">11%</td><td style="text-align:left">核心</td></tr>
+          <tr class="lead-row"><td>¥160–229</td><td style="text-align:left">品质主力 · GMV 最大</td><td class="num">469</td><td class="num">31%</td><td class="num">11%</td><td style="text-align:left">带内第一</td></tr>
+          <tr><td>¥230+</td><td style="text-align:left">超高端</td><td class="num">90</td><td class="num">6%</td><td class="num">1%</td><td style="text-align:left;color:var(--tm)">白点 · 仅松伴</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <div class="chart">
+        <div class="clabel"><span class="chip tm">天猫</span> GMV 占比（按价格带）</div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">&lt;¥40</span><div class="track"><div class="fill" style="width:87%;background:var(--accent)"></div></div><span class="val">27%</span></div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">40–99</span><div class="track"><div class="fill" style="width:48%;background:var(--accent)"></div></div><span class="val">15%</span></div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">100–159</span><div class="track"><div class="fill" style="width:71%;background:var(--accent)"></div></div><span class="val">22%</span></div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">160–229</span><div class="track"><div class="fill" style="width:100%;background:var(--accent)"></div></div><span class="val">31%</span></div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">¥230+</span><div class="track"><div class="fill" style="width:19%;background:var(--accent)"></div></div><span class="val">6%</span></div>
+      </div>
+      <div class="chart">
+        <div class="clabel"><span class="chip tm">天猫</span> 销量 占比（按价格带）</div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">&lt;¥40</span><div class="track"><div class="fill" style="width:100%;background:#9aa0ac"></div></div><span class="val">63%</span></div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">40–99</span><div class="track"><div class="fill" style="width:22%;background:#9aa0ac"></div></div><span class="val">14%</span></div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">100–159</span><div class="track"><div class="fill" style="width:17%;background:#9aa0ac"></div></div><span class="val">11%</span></div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">160–229</span><div class="track"><div class="fill" style="width:17%;background:#9aa0ac"></div></div><span class="val">11%</span></div>
+        <div class="row" style="grid-template-columns:64px 1fr 40px"><span class="m">¥230+</span><div class="track"><div class="fill" style="width:2%;background:#9aa0ac"></div></div><span class="val">1%</span></div>
+      </div>
+    </div>
+    <div class="take"><b>结论</b> · 典型哑铃型：<b>63% 的销量</b>挤在 &lt;¥40 白牌带（只贡献 27% GMV），而 <b>31% 的 GMV</b> 来自 ¥160–229 品质带（只占 11% 销量）。睡洞卡在 ¥100–229 品质双带并做到带内第一，主动避开了"拿量不赚钱"的低价血海。</div>
+    <div class="clabel" style="margin-top:22px">同口径 · <span class="chip jd">京东</span>头部 Top50（约占品类 GMV 72%）· 京东是"中价集中"而非哑铃</div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>价格带</th><th>GMV(万)</th><th>GMV占比</th><th>销量占比</th></tr></thead>
+        <tbody>
+          <tr><td>&lt;¥40</td><td class="num">51</td><td class="num">12%</td><td class="num">36%</td></tr>
+          <tr class="lead-row"><td>¥40–99</td><td class="num">189</td><td class="num">45%</td><td class="num">47%</td></tr>
+          <tr><td>¥100–159</td><td class="num">79</td><td class="num">19%</td><td class="num">10%</td></tr>
+          <tr><td>¥160–229</td><td class="num">65</td><td class="num">15%</td><td class="num">5%</td></tr>
+          <tr><td>¥230+</td><td class="num">35</td><td class="num">8%</td><td class="num">2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="take"><b>平台差异</b> · 京东 45% 的 GMV、47% 的销量集中在 ¥40–99 中价带（京造 ¥71、睡洞充气 ¥76、MUJI ¥67 都在此），&lt;¥40 白牌带远比天猫小——京东是<b>中端市场</b>。这也解释了睡洞京东靠 ¥76 充气款、¥112 均价放量的选择。</div>
+    <p class="note">两平台<b>分别</b>用各自 Top50 统计、<b>未混合</b>（天猫约占品类 GMV 60%、京东约 72%）；为头部近似分布，非全量精确统计。</p>
+
+    <h3>京东价格策略：均价为何下移？（已用单品逐月价格验证）</h3>
+    <div class="grid2">
+      <div class="chart">
+        <div class="clabel"><span class="chip jd">京东</span> 睡洞溢价倍数（睡洞均价 ÷ 大盘均价）· 结构性下移</div>
+        <div class="row"><span class="m">1月</span><div class="track"><div class="fill" style="width:90%;background:var(--jd)"></div></div><span class="val">3.6×</span></div>
+        <div class="row"><span class="m">2月</span><div class="track"><div class="fill" style="width:100%;background:var(--jd)"></div></div><span class="val">4.0×</span></div>
+        <div class="row"><span class="m">3月</span><div class="track"><div class="fill" style="width:75%;background:var(--jd)"></div></div><span class="val">3.0×</span></div>
+        <div class="row"><span class="m">4月</span><div class="track"><div class="fill" style="width:73%;background:var(--jd)"></div></div><span class="val">2.9×</span></div>
+        <div class="row"><span class="m">5月</span><div class="track"><div class="fill" style="width:58%;background:var(--jd)"></div></div><span class="val">2.3×</span></div>
+        <div class="row"><span class="m">6月</span><div class="track"><div class="fill" style="width:50%;background:var(--jd)"></div></div><span class="val">2.0×</span></div>
+      </div>
+      <div>
+        <div class="clabel">睡洞<b>同款</b> SKU · 1月 → 6月 价格</div>
+        <div class="tblwrap"><table>
+          <thead><tr><th>同一 SKU</th><th>1月</th><th>6月</th><th>变化</th></tr></thead>
+          <tbody>
+            <tr><td>护颈鸵鸟颈枕（销冠）</td><td class="num">¥315</td><td class="num">¥202</td><td class="num" style="color:var(--down)">−36%</td></tr>
+            <tr><td>旅行 U型枕</td><td class="num">¥176</td><td class="num">¥134</td><td class="num" style="color:var(--down)">−24%</td></tr>
+            <tr><td>小荷包颈枕</td><td class="num">¥97</td><td class="num">¥92</td><td class="num" style="color:var(--muted)">持平</td></tr>
+          </tbody>
+        </table></div>
+        <p class="note" style="margin-top:6px">另：6 月新增 / 放大 ¥76 充气款（3,633 件）、¥18 星星耳塞（1,133 件）等低价走量 SKU（1 月 Top 中均无）。</p>
+      </div>
+    </div>
+    <div class="take"><b>验证结论</b> · 均价下移是<b>双管齐下</b>：① 旗舰款<b>实打实降价</b>（鸵鸟枕同款 ¥315→¥202、−36%）；② <b>新增低价走量 SKU</b>（¥76 充气款、¥18 耳塞）。"以价换量抢份额"确实成立——既给老款降价、又扩低价盘；需持续盯住其对品牌高端心智的稀释。</div>
+
+    <!-- 3.4 Top 商品 -->
+    <h3>3.4 品类 TOP 商品（点击标题直达商品页 · 点表头排序）</h3>
+    <p class="note" style="margin:2px 0 8px">单品名称为平台<b>原始标题</b>（电商标题普遍较长、含关键词堆砌，属正常现象），点击直达商品页核对。</p>
+    <p style="font-size:13px;margin:2px 0 6px"><span class="chip tm">天猫</span> 2026-06</p>
+    <div class="tblwrap">
+      <table class="sortable">
+        <thead><tr><th>单品（点击直达）</th><th>品牌</th><th>GMV(万)</th><th>销量</th><th>均价</th></tr></thead>
+        <tbody>
+          <tr class="lead-row"><td><a href="https://item.taobao.com/item.htm?id=764473375119" target="_blank" rel="noopener">睡洞EVERYTHINK旅行颈枕脖子头枕飞机睡觉u形枕护颈脖枕便携u型枕</a></td><td>睡洞</td><td class="num">127.5</td><td class="num">9,002</td><td class="num">¥142</td></tr>
+          <tr><td><a href="https://item.taobao.com/item.htm?id=620872119529" target="_blank" rel="noopener">无印良品 MUJI 舒适颈部靠枕 u型枕飞机护颈椎枕脖枕 旅行枕</a></td><td>MUJI</td><td class="num">97.0</td><td class="num">11,649</td><td class="num">¥83</td></tr>
+          <tr class="lead-row"><td><a href="https://item.taobao.com/item.htm?id=870314881020" target="_blank" rel="noopener">睡洞EVERYTHINK旅行枕飞机睡觉第三代颈枕护颈脖枕头枕便携u型枕</a></td><td>睡洞</td><td class="num">95.9</td><td class="num">4,443</td><td class="num">¥216</td></tr>
+          <tr><td><a href="https://item.taobao.com/item.htm?id=964741447059" target="_blank" rel="noopener">tbh野兽派家居三丽鸥Hello Kitty连帽旅行U型枕旅行护颈枕头枕</a></td><td>野兽派 tbh</td><td class="num">68.9</td><td class="num">3,647</td><td class="num">¥189</td></tr>
+          <tr><td><a href="https://item.taobao.com/item.htm?id=853345269175" target="_blank" rel="noopener">名创优品记忆棉u型枕旅行护颈椎枕飞机睡觉枕头脖子靠枕便携u形枕</a></td><td>名创优品</td><td class="num">59.4</td><td class="num">15,671</td><td class="num">¥38</td></tr>
+          <tr><td><a href="https://item.taobao.com/item.htm?id=682957726406" target="_blank" rel="noopener">OstrichPillow鸵鸟枕不歪脖旅行u型枕头护颈枕办公室午睡枕颈椎枕</a></td><td>OstrichPillow</td><td class="num">58.9</td><td class="num">3,633</td><td class="num">¥162</td></tr>
+          <tr class="lead-row"><td><a href="https://item.taobao.com/item.htm?id=782482972625" target="_blank" rel="noopener">EVERYTHINK旅行枕颈枕飞机枕脖子头枕学生午睡护颈u形枕便携u型枕</a></td><td>睡洞</td><td class="num">48.2</td><td class="num">3,213</td><td class="num">¥150</td></tr>
+          <tr><td><a href="https://item.taobao.com/item.htm?id=1009609969102" target="_blank" rel="noopener">松伴SOMBHigo360度可调节山丘U型枕颈枕记忆旅行枕靠枕</a></td><td>松伴 SOMB</td><td class="num">46.3</td><td class="num">1,328</td><td class="num">¥349</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;margin:14px 0 6px"><span class="chip jd">京东</span> 2026-06</p>
+    <div class="tblwrap">
+      <table class="sortable">
+        <thead><tr><th>单品（点击直达）</th><th>品牌</th><th>GMV(万)</th><th>销量</th><th>均价</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://item.jd.com/100148388654.html" target="_blank" rel="noopener">京东京造【TOP1】小蜗旅行枕 航天记忆棉U型枕护颈枕 便携收纳设计 户外</a></td><td>京东京造</td><td class="num">43.1</td><td class="num">6,050</td><td class="num">¥71</td></tr>
+          <tr class="lead-row"><td><a href="https://item.jd.com/100182404110.html" target="_blank" rel="noopener">睡洞 护颈u型枕颈枕旅行飞机高铁脖枕everythink便携颈托u形鸵鸟枕</a></td><td>睡洞</td><td class="num">30.8</td><td class="num">1,526</td><td class="num">¥202</td></tr>
+          <tr class="lead-row"><td><a href="https://item.jd.com/100328155630.html" target="_blank" rel="noopener">睡洞EVERYTHINK充气旅行护颈枕飞机睡觉U形枕脖枕便携u型枕</a></td><td>睡洞</td><td class="num">27.7</td><td class="num">3,633</td><td class="num">¥76</td></tr>
+          <tr><td><a href="https://item.jd.com/100273371724.html" target="_blank" rel="noopener">MUJI【自营限定】舒适颈部靠枕-蓝灰条纹 u型枕颈枕飞机旅行枕脖枕</a></td><td>MUJI</td><td class="num">27.6</td><td class="num">4,148</td><td class="num">¥67</td></tr>
+          <tr><td><a href="https://item.jd.com/100163292994.html" target="_blank" rel="noopener">名创优品（MINISO）记忆棉u型枕护颈枕旅行便携靠枕长途出行脖枕办公室午睡枕神器</a></td><td>名创优品</td><td class="num">24.4</td><td class="num">4,924</td><td class="num">¥50</td></tr>
+          <tr class="lead-row"><td><a href="https://item.jd.com/100193408123.html" target="_blank" rel="noopener">睡洞旅行u型枕便携护颈枕飞机脖枕长途出行颈托everythink午睡u形颈枕</a></td><td>睡洞</td><td class="num">19.3</td><td class="num">1,298</td><td class="num">¥149</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3.5 场景人群 -->
+    <h3>3.5 场景 / 人群 / 卖点（定性）</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>维度</th><th>信号</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td style="font-weight:600">主场景</td><td style="text-align:left">飞机 / 高铁 / 坐车 / 长途（近 100% 标题）</td><td style="text-align:left">出行是基本盘，不构成差异化</td></tr>
+          <tr><td style="font-weight:600">第二场景</td><td style="text-align:left">办公室 / 午睡 / 午休</td><td style="text-align:left">OstrichPillow、觉轻松主打；睡洞较少强调</td></tr>
+          <tr><td style="font-weight:600">人群白点</td><td style="text-align:left">儿童 / 母婴（头部仅 pokmoon 一款）</td><td style="text-align:left">明显空白，但需求待验证</td></tr>
+          <tr><td style="font-weight:600">溢价卖点</td><td style="text-align:left">降噪 / 隔音（京东侧，愿望良品 −45db ¥153）</td><td style="text-align:left">能撑 ¥150+ 溢价</td></tr>
+          <tr><td style="font-weight:600">流量玩法</td><td style="text-align:left">三丽鸥 / Hello Kitty · 京东 xJDear 李小冉同款</td><td style="text-align:left">IP 联名是高价带的流量抓手</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">口径限制：数据集不支持按标题关键词筛选，以上为双平台 Top50 单品标题的定性归纳，非精确 sizing。</p>
+  </section>
+
+  <!-- ===== 4 重点品牌 ===== -->
+  <section>
+    <div class="sec-h"><span class="no">04</span><h2>重点品牌</h2></div>
+    <div class="sec-lead">睡洞 + 6 个重点竞品，每个一个模块。数值为 6 月快照，趋势条为半年 GMV 走势（点击 SKU 直达商品页）。</div>
+    <p class="note" style="margin:-14px 0 20px">各模块「头部商品」取自品类 <b>Top50</b> 榜单，故 SKU 数较少、覆盖有限（如松伴仅 1 款入榜）；如需某品牌<b>完整货盘</b>可按品牌单独深取。</p>
+
+    <!-- 睡洞 -->
+    <div class="brand hero">
+      <div class="bh"><span class="bn">睡洞 EVERYTHINK</span><span class="role">品类领导者 · 双平台 No.1</span></div>
+      <div class="one">天猫守成、京东攻城；靠超级大单品 + 品质价格带（¥112–216）建立护城河。</div>
+      <div class="bgrid">
+        <div>
+          <div class="stat">
+            <div class="s"><div class="sv" style="color:var(--tm)">¥365.9万</div><div class="sl"><span class="chip tm">天猫</span> 份额 14.5% · 均价 ¥148</div></div>
+            <div class="s"><div class="sv" style="color:var(--jd)">¥141.2万</div><div class="sl"><span class="chip jd">京东</span> 份额 24.2% · 均价 ¥112</div></div>
+          </div>
+          <div class="spark up"><span style="height:79%"></span><span style="height:92%"></span><span style="height:64%"></span><span style="height:71%"></span><span style="height:77%"></span><span style="height:100%"></span></div>
+          <div class="sparkcap">天猫 GMV 半年走势 289→366万</div>
+        </div>
+        <div>
+          <table style="font-size:12.5px">
+            <tbody>
+              <tr><td><a href="https://item.taobao.com/item.htm?id=764473375119" target="_blank" rel="noopener">旅行颈枕 经典款</a></td><td><span class="chip tm">天猫</span></td><td class="num">127.5万</td></tr>
+              <tr><td><a href="https://item.taobao.com/item.htm?id=870314881020" target="_blank" rel="noopener">第三代颈枕</a></td><td><span class="chip tm">天猫</span></td><td class="num">95.9万</td></tr>
+              <tr><td><a href="https://item.jd.com/100182404110.html" target="_blank" rel="noopener">护颈鸵鸟颈枕</a></td><td><span class="chip jd">京东</span></td><td class="num">30.8万</td></tr>
+              <tr><td><a href="https://item.jd.com/100328155630.html" target="_blank" rel="noopener">充气旅行护颈枕</a></td><td><span class="chip jd">京东</span></td><td class="num">27.7万</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="threat"><b>战略读法</b> · 天猫维持爆款金字塔并防御升温的高端带；京东势能正盛，可继续加注，盯死平台自有的京造。</div>
+    </div>
+
+    <!-- 名创 -->
+    <div class="brand">
+      <div class="bh"><span class="bn">名创优品 MINISO</span><span class="role">走量之王</span></div>
+      <div class="one">最大销量玩家，靠 ¥30 低价 + IP（玉桂狗）堆量，与睡洞不在同一价格带。</div>
+      <div class="bgrid">
+        <div>
+          <div class="stat">
+            <div class="s"><div class="sv">¥181.4万</div><div class="sl"><span class="chip tm">天猫</span> #2 · 7.2% · ¥30</div></div>
+            <div class="s"><div class="sv">¥52.1万</div><div class="sl"><span class="chip jd">京东</span> #4 · 8.9% · ¥37</div></div>
+          </div>
+          <div class="spark fl"><span style="height:91%"></span><span style="height:100%"></span><span style="height:66%"></span><span style="height:72%"></span><span style="height:80%"></span><span style="height:82%"></span></div>
+          <div class="sparkcap">天猫 GMV 半年走势 · 平稳 ~180万</div>
+        </div>
+        <div>
+          <table style="font-size:12.5px"><tbody>
+            <tr><td><a href="https://item.taobao.com/item.htm?id=853345269175" target="_blank" rel="noopener">记忆棉 U型枕</a></td><td><span class="chip tm">天猫</span></td><td class="num">59.4万</td></tr>
+            <tr><td><a href="https://item.taobao.com/item.htm?id=637467524996" target="_blank" rel="noopener">玉桂狗 U型枕</a></td><td><span class="chip tm">天猫</span></td><td class="num">20.7万</td></tr>
+            <tr><td><a href="https://item.jd.com/100163292994.html" target="_blank" rel="noopener">记忆棉护颈枕</a></td><td><span class="chip jd">京东</span></td><td class="num">24.4万</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="threat"><b>威胁度 <span class="t-lo">低</span></b> · 不同价格带，但它定义了大众价格锚，IP 联名玩法值得借鉴。</div>
+    </div>
+
+    <!-- MUJI -->
+    <div class="brand">
+      <div class="bh"><span class="bn">无印良品 MUJI</span><span class="role">中端老牌</span></div>
+      <div class="one">¥83 中端标杆，靠品牌调性稳居前三；6 月天猫单月暴涨 +81%，正在提速。</div>
+      <div class="bgrid">
+        <div>
+          <div class="stat">
+            <div class="s"><div class="sv">¥97.0万</div><div class="sl"><span class="chip tm">天猫</span> #3 · 3.8% · ¥83</div></div>
+            <div class="s"><div class="sv">¥58.5万</div><div class="sl"><span class="chip jd">京东</span> #3 · 10.0% · ¥83</div></div>
+          </div>
+          <div class="spark up"><span style="height:26%"></span><span style="height:37%"></span><span style="height:32%"></span><span style="height:23%"></span><span style="height:55%"></span><span style="height:100%"></span></div>
+          <div class="sparkcap">天猫 GMV 半年走势 · 6月跳升至 97万</div>
+        </div>
+        <div>
+          <table style="font-size:12.5px"><tbody>
+            <tr><td><a href="https://item.taobao.com/item.htm?id=620872119529" target="_blank" rel="noopener">舒适颈部靠枕</a></td><td><span class="chip tm">天猫</span></td><td class="num">97.0万</td></tr>
+            <tr><td><a href="https://item.jd.com/100273371724.html" target="_blank" rel="noopener">颈部靠枕 蓝灰条纹</a></td><td><span class="chip jd">京东</span></td><td class="num">27.6万</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="threat"><b>威胁度 <span class="t-mid">中</span></b> · 京东份额 10% 且价格带更近，是睡洞降价路上的正面对手。</div>
+    </div>
+
+    <!-- 野兽派 -->
+    <div class="brand">
+      <div class="bh"><span class="bn">野兽派 tbh</span><span class="role">IP 溢价 · 同价带对手</span></div>
+      <div class="one">与睡洞同价位（¥184–199），靠三丽鸥 / Hello Kitty 联名把 IP 溢价打到品类第 4。</div>
+      <div class="bgrid">
+        <div>
+          <div class="stat">
+            <div class="s"><div class="sv">¥90.8万</div><div class="sl"><span class="chip tm">天猫</span> #4 · 3.6% · ¥184</div></div>
+            <div class="s"><div class="sv">¥22.4万</div><div class="sl"><span class="chip jd">京东</span> · ¥199</div></div>
+          </div>
+          <div class="spark dn"><span style="height:100%"></span><span style="height:96%"></span><span style="height:87%"></span><span style="height:75%"></span><span style="height:79%"></span><span style="height:80%"></span></div>
+          <div class="sparkcap">天猫 GMV 半年走势 · 缓降 114→91万</div>
+        </div>
+        <div>
+          <table style="font-size:12.5px"><tbody>
+            <tr><td><a href="https://item.taobao.com/item.htm?id=964741447059" target="_blank" rel="noopener">Hello Kitty 连帽旅行枕</a></td><td><span class="chip tm">天猫</span></td><td class="num">68.9万</td></tr>
+            <tr><td><a href="https://item.jd.com/10177397190356.html" target="_blank" rel="noopener">Hello Kitty 连帽旅行枕</a></td><td><span class="chip jd">京东</span></td><td class="num">9.4万</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="threat"><b>威胁度 <span class="t-mid">中高</span></b>（同价带） · IP 联名是它的护城河，也是睡洞在品质带最值得学的打法。</div>
+    </div>
+
+    <!-- OstrichPillow -->
+    <div class="brand">
+      <div class="bh"><span class="bn">OstrichPillow 鸵鸟枕</span><span class="role">品类原型 · 场景代言</span></div>
+      <div class="one">"鸵鸟枕"形态原型、办公室午睡场景代言，¥162–288 高价位，进口调性。</div>
+      <div class="bgrid">
+        <div>
+          <div class="stat">
+            <div class="s"><div class="sv">¥85.6万</div><div class="sl"><span class="chip tm">天猫</span> #6 · 3.4% · ¥162</div></div>
+            <div class="s"><div class="sv">¥13.4万</div><div class="sl"><span class="chip jd">京东</span> · ¥288</div></div>
+          </div>
+          <div class="sparkcap" style="margin-top:6px">天猫月度数据缺 1、5 月（品牌多写法），趋势略。</div>
+        </div>
+        <div>
+          <table style="font-size:12.5px"><tbody>
+            <tr><td><a href="https://item.taobao.com/item.htm?id=682957726406" target="_blank" rel="noopener">鸵鸟枕 · 办公室午睡</a></td><td><span class="chip tm">天猫</span></td><td class="num">58.9万</td></tr>
+            <tr><td><a href="https://item.jd.com/51162694158.html" target="_blank" rel="noopener">西班牙鸵鸟枕</a></td><td><span class="chip jd">京东</span></td><td class="num">4.3万</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="threat"><b>威胁度 <span class="t-mid">中</span></b> · 占据"办公室午睡"场景与鸵鸟形态心智，是场景差异化的参照系。</div>
+    </div>
+
+    <!-- 松伴 -->
+    <div class="brand">
+      <div class="bh"><span class="bn">松伴 SOMB</span><span class="role">超高端独占 · 白点持有者</span></div>
+      <div class="one">¥349 独占 ¥340+ 超高端带，靠"Higo 山丘 360° 可调节"功能创新，半年 GMV 翻倍。天猫为主，京东近乎缺席。</div>
+      <div class="bgrid">
+        <div>
+          <div class="stat">
+            <div class="s"><div class="sv">¥90.2万</div><div class="sl"><span class="chip tm">天猫</span> #5 · 3.6% · ¥347</div></div>
+            <div class="s"><div class="sv" style="color:var(--faint)">≈0</div><div class="sl"><span class="chip o">京东</span> 近乎缺席</div></div>
+          </div>
+          <div class="spark up"><span style="height:59%"></span><span style="height:80%"></span><span style="height:72%"></span><span style="height:79%"></span><span style="height:92%"></span><span style="height:100%"></span></div>
+          <div class="sparkcap">天猫 GMV 半年走势 · 53→90万，稳步上攻</div>
+        </div>
+        <div>
+          <table style="font-size:12.5px"><tbody>
+            <tr><td><a href="https://item.taobao.com/item.htm?id=1009609969102" target="_blank" rel="noopener">Higo 山丘 360° 可调节枕</a></td><td><span class="chip tm">天猫</span></td><td class="num">46.3万</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="threat"><b>战略意义</b> · 睡洞唯一的<b>向上白点</b>。它证明 ¥340+ 有真实需求（靠功能而非 IP），且正在放量——窗口在收窄，睡洞若要卡位宜早不宜迟。</div>
+    </div>
+
+    <!-- 京造 -->
+    <div class="brand">
+      <div class="bh"><span class="bn">京东京造 JINGZAO</span><span class="role">京东自有 · 贴身对手</span></div>
+      <div class="one">京东平台自有品牌，¥58–71 高性价比，京东品类单品第一（小蜗旅行枕）。半年从 ¥108万 降到 ¥60万，正被睡洞蚕食。</div>
+      <div class="bgrid">
+        <div>
+          <div class="stat">
+            <div class="s"><div class="sv">¥60.2万</div><div class="sl"><span class="chip jd">京东</span> #2 · 10.3% · ¥58</div></div>
+            <div class="s"><div class="sv" style="color:var(--faint)">—</div><div class="sl"><span class="chip o">天猫</span> 无</div></div>
+          </div>
+          <div class="sparkcap" style="margin-top:6px">京东：1月 ¥108万 → 6月 ¥60万（方向性下滑，中间月份数据不全）</div>
+        </div>
+        <div>
+          <table style="font-size:12.5px"><tbody>
+            <tr><td><a href="https://item.jd.com/100148388654.html" target="_blank" rel="noopener">小蜗旅行枕 · 航天记忆棉</a></td><td><span class="chip jd">京东</span></td><td class="num">43.1万</td></tr>
+            <tr><td><a href="https://item.jd.com/100056148641.html" target="_blank" rel="noopener">瑞士卷旅行枕</a></td><td><span class="chip jd">京东</span></td><td class="num">9.4万</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="threat"><b>威胁度 <span class="t-hi">高</span></b>（京东） · 有平台流量扶持 + 性价比，睡洞京东的降价放量正与其正面交锋。</div>
+    </div>
+  </section>
+
+  <!-- ===== 5 结论建议 ===== -->
+  <section>
+    <div class="sec-h"><span class="no">05</span><h2>结论与行动建议</h2></div>
+    <div class="sec-lead">四条可落地的方向。</div>
+    <ol class="recs">
+      <li><b>京东：乘胜追击，但守住价格心智。</b>份额势能正盛，可继续加注货盘与流量；同时监控降价对品牌溢价的侵蚀，避免把"品质旅行枕"打成"性价比枕"。直接对手是平台自有京造，盯其价格与货盘节奏。</li>
+      <li><b>天猫：守成也要投入。</b>份额虽稳，但高端带（MUJI +81%、松伴翻倍）正在升温，"稳态"需靠爆款迭代（经典款 + 第三代）与 IP/内容维持，切忌躺平。</li>
+      <li><b>向上卡位 ¥340+ 白点，宜早不宜迟。</b>超高端仅松伴一家且半年翻倍，证明需求真实（靠功能创新而非 IP）。睡洞有品牌力向上延伸，窗口正在收窄。</li>
+      <li><b>差异化探索：母婴人群 + 降噪卖点 + IP 联名。</b>儿童/母婴是头部空白（待验证）；降噪能撑 ¥150+ 溢价（京东已验证）；IP 联名是高价带流量抓手（野兽派靠一款做到品类第 4）。可小步试水。</li>
+    </ol>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <div class="footer">
+    <b>数据来源与口径</b><br>
+    · 数据源：Asklear 京东 / 天猫 月度商品销量库（dataset = jd / tmall）；指标为券后 GMV、销量、平均成交价，月粒度。<br>
+    · 数据性质：来源于平台公开页面信息并经简单脱敏，<b>不含退货退款，非平台真实成交口径</b>，适合趋势 / 占比 / 定性分析。<br>
+    · 时间范围：2026-01 ~ 2026-06（授权上限），水位截至 2026-06。品类值：京东 <code>U型枕</code> · 天猫 <code>U型枕/便携枕</code>。份额 = 品牌 GMV ÷ 品类大盘 GMV。<br>
+    · 已知局限：不含评价 / 流量 / 库存 / 人群画像；标题不可作筛选（场景/人群为定性）；价格带基于头部 Top50 单品；京东部分竞品因品牌多写法逐月数据不全，仅作方向性参考。<br>
+    · 报告生成于 2026-08-07。表格支持点击表头排序，SKU 名称为商品页超链接。
+  </div>
+
+</div>
+
+<script>
+(function(){
+  function parse(s){var n=(s==null?'':(''+s)).replace(/[^0-9.\-]/g,'');var f=parseFloat(n);return isNaN(f)?null:f;}
+  function sortTable(th){
+    var table=th.closest('table'),tbody=table.tBodies[0];
+    var ths=th.parentNode.children,idx=Array.prototype.indexOf.call(ths,th);
+    var asc=!(th.getAttribute('data-asc')==='true');
+    for(var i=0;i<ths.length;i++)ths[i].removeAttribute('data-asc');
+    th.setAttribute('data-asc',asc);
+    var rows=Array.prototype.slice.call(tbody.rows);
+    rows.sort(function(a,b){
+      var x=parse(a.cells[idx]&&a.cells[idx].textContent),y=parse(b.cells[idx]&&b.cells[idx].textContent);
+      if(x!=null&&y!=null)return asc?x-y:y-x;
+      var xs=(a.cells[idx]?a.cells[idx].textContent:''),ys=(b.cells[idx]?b.cells[idx].textContent:'');
+      return asc?xs.localeCompare(ys,'zh'):ys.localeCompare(xs,'zh');
+    });
+    rows.forEach(function(r){tbody.appendChild(r);});
+  }
+  document.querySelectorAll('table.sortable thead th').forEach(function(th){th.addEventListener('click',function(){sortTable(th);});});
+})();
+</script>
+</body>
+</html>

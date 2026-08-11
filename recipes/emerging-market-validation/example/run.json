@@ -1,0 +1,17 @@
+{
+  "recipe_id": "emerging-market-validation",
+  "executed_at": "2026-08-10",
+  "review_scope": {
+    "core_facts": "data.json 中被 findings 引用的核心事实已重跑复核",
+    "reviewed_research": "reviewed-research.md 与 review.json 的 contentHash 一致",
+    "final_report": "report.md 是编辑型衍生稿；商品级数字追溯至 drilldown.md，外部背景资料在报告中直接链接"
+  },
+  "artifacts": {
+    "review.json": "sha256:c3fd2836e4023934df5dc95dedd302f75a03cbc0f11a052a791dd95e29f087c3",
+    "reviewed-research.md": "sha256:b43599fe03df735c4eacc3e0bff5d405bfdb65d7576ecf060b75ea115721bb70",
+    "drilldown.md": "sha256:545c2340144abc80e65f01ecb4c6bbfa7b7670e9c1f68464326c148a24c8ae8a",
+    "report.md": "sha256:ba7200a08a10b0303886e7221965d9b71460580dd20a6074009864252a61e3f5",
+    "report.html": "sha256:8c3e1891d773585548ae489c9c9c0a754352687cb5832b70fe1b84db2dbc653e",
+    "report.pdf": "sha256:73ccd452b70b0c7fd101fff97ecc24a7dd6d83460ef19f2c7b604315b4d27319"
+  }
+}

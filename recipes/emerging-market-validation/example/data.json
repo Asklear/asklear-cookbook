@@ -1,0 +1,253 @@
+{
+  "contractVersion": "1.1",
+  "articleId": "ai-glasses-real-sales",
+  "generatedAt": "2026-08-10T15:43:54.000Z",
+  "dataVersion": "jd-release-2026-06-r6+oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+  "resolvedScope": {
+    "platforms": ["jd", "tmall"],
+    "startDate": "2026-01-01",
+    "endDate": "2026-06-30",
+    "granularity": "month",
+    "entities": ["智能眼镜", "学习机", "智能耳机", "翻译机/翻译设备", "录音笔/AI录音设备"],
+    "currency": "CNY"
+  },
+  "queries": [
+    {
+      "id": "q-jd-first-quarter",
+      "platform": "jd",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "jd", "time": {"start": "2026-01-01", "end": "2026-03-31"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": [], "order_by": [], "limit": 100},
+      "executedAt": "2026-08-09T07:20:00.000Z",
+      "dataVersion": "jd-release-2026-06-r6",
+      "resultHash": "sha256:ce6010784895b9d350a58c5d11be2acf5dd2851b538e611d8c27a2713e035519"
+    },
+    {
+      "id": "q-jd-second-quarter",
+      "platform": "jd",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "jd", "time": {"start": "2026-04-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": [], "order_by": [], "limit": 100},
+      "executedAt": "2026-08-09T07:20:00.000Z",
+      "dataVersion": "jd-release-2026-06-r6",
+      "resultHash": "sha256:2eeaceda9f29cb250cc0f46efaca63918d8631dbd8b7c1e4608b9a659a8097f0"
+    },
+    {
+      "id": "q-tmall-first-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-01-01", "end": "2026-03-31"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": [], "order_by": [], "limit": 100},
+      "executedAt": "2026-08-09T07:20:00.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:ed059353690be47e05ad1e89f781d12ffd84d5eba2cd6d22aa1f0634a567b147"
+    },
+    {
+      "id": "q-tmall-second-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-04-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": [], "order_by": [], "limit": 100},
+      "executedAt": "2026-08-09T07:20:00.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:951d79cd2b3dcb6b352c80fe64bb45a9fec8a5a007d00bf1863e82bb8217fc81"
+    },
+    {
+      "id": "q-jd-monthly-half",
+      "platform": "jd",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "jd", "time": {"start": "2026-01-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": ["month"], "order_by": [{"field": "month", "dir": "asc"}], "limit": 20},
+      "executedAt": "2026-08-09T14:10:00.000Z",
+      "dataVersion": "jd-release-2026-06-r6",
+      "resultHash": "sha256:0b8dd7c8fddeeae0f416a4eda3ceb7920e6337ebe958a9e3b68d877f90aac5dc"
+    },
+    {
+      "id": "q-tmall-monthly-first-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-01-01", "end": "2026-03-31"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": ["month"], "order_by": [{"field": "month", "dir": "asc"}], "limit": 10},
+      "executedAt": "2026-08-09T14:22:00.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:90e66d843dd45298c9224d71182f34a921068f2aa1ef4503bba3f87bdaf782e8"
+    },
+    {
+      "id": "q-tmall-monthly-second-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-04-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": ["month"], "order_by": [{"field": "month", "dir": "asc"}], "limit": 10},
+      "executedAt": "2026-08-09T14:23:00.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:fa2dd5e9df60eb7edc7d1b7b3735e512d030c107187a5a2994716038b34bfe75"
+    },
+    {
+      "id": "q-jd-brands-second-quarter",
+      "platform": "jd",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "jd", "time": {"start": "2026-04-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": ["brand"], "order_by": [{"field": "gmv", "dir": "desc"}], "limit": 20},
+      "executedAt": "2026-08-09T14:27:00.000Z",
+      "dataVersion": "jd-release-2026-06-r6",
+      "resultHash": "sha256:8d1349cc9b69b3fb82ba4495291047ba62da5626bf5aaf044c901097c95560f6"
+    },
+    {
+      "id": "q-tmall-brands-second-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-04-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能眼镜"}], "metrics": ["gmv", "units", "asp"], "group_by": ["brand"], "order_by": [{"field": "gmv", "dir": "desc"}], "limit": 20},
+      "executedAt": "2026-08-09T14:28:00.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:eadf24d41d915b2f6e871cbc902a537f6fce76a59194cf5e49717fee62ac4aad"
+    },
+    {
+      "id": "q-jd-ai-recorder-monthly",
+      "platform": "jd",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "jd", "time": {"start": "2026-01-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "录音笔/AI录音设备"}], "metrics": ["gmv", "units"], "group_by": ["month"], "order_by": [{"field": "month", "dir": "asc"}], "limit": 12},
+      "executedAt": "2026-08-10T15:43:54.000Z",
+      "dataVersion": "jd-release-2026-06-r6",
+      "resultHash": "sha256:d06d2f272d9d2cb361f48b9a6a95bd6554c0bd8bcdb7328294aa8f2a3280db5d"
+    },
+    {
+      "id": "q-jd-learning-device-monthly",
+      "platform": "jd",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "jd", "time": {"start": "2026-01-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "学习机"}], "metrics": ["gmv", "units"], "group_by": ["month"], "order_by": [{"field": "month", "dir": "asc"}], "limit": 12},
+      "executedAt": "2026-08-10T15:43:54.000Z",
+      "dataVersion": "jd-release-2026-06-r6",
+      "resultHash": "sha256:16a578e17600774b9432d5fccc63b4b4e99e025a095e0090ad9720d0f3dbe785"
+    },
+    {
+      "id": "q-jd-translation-device-monthly",
+      "platform": "jd",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "jd", "time": {"start": "2026-01-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "翻译机/翻译设备"}], "metrics": ["gmv", "units"], "group_by": ["month"], "order_by": [{"field": "month", "dir": "asc"}], "limit": 12},
+      "executedAt": "2026-08-10T15:43:54.000Z",
+      "dataVersion": "jd-release-2026-06-r6",
+      "resultHash": "sha256:0c47adf969fb28c512ea5d0eb9ba0a524f37efd3bffda0cbf0f9b223b5a079d0"
+    },
+    {
+      "id": "q-tmall-smart-earbuds-first-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-01-01", "end": "2026-03-31"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能耳机"}], "metrics": ["gmv"], "group_by": [], "order_by": [], "limit": 10},
+      "executedAt": "2026-08-10T15:43:54.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:a4c87fdaf97f609084b7e45b9979c7db628f6691397626c469106dec4a591ac4"
+    },
+    {
+      "id": "q-tmall-smart-earbuds-second-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-04-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "智能耳机"}], "metrics": ["gmv"], "group_by": [], "order_by": [], "limit": 10},
+      "executedAt": "2026-08-10T15:43:54.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:c2a9d1fe38278a64dd25accf462999404e0c9920ac0d16a91eb66361607880b3"
+    },
+    {
+      "id": "q-tmall-learning-device-first-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-01-01", "end": "2026-03-31"}, "filters": [{"field": "category_l3", "op": "eq", "value": "学习机/教育伴学机/作业机"}], "metrics": ["gmv"], "group_by": [], "order_by": [], "limit": 10},
+      "executedAt": "2026-08-10T15:43:54.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:133d9dc13f1e8c0fa1503d699ce2a66d6388b1f001cf85394b78e438dc0b8b5f"
+    },
+    {
+      "id": "q-tmall-learning-device-second-quarter",
+      "platform": "tmall",
+      "operation": "query_metrics",
+      "parameters": {"dataset": "tmall", "time": {"start": "2026-04-01", "end": "2026-06-30"}, "filters": [{"field": "category_l3", "op": "eq", "value": "学习机/教育伴学机/作业机"}], "metrics": ["gmv"], "group_by": [], "order_by": [], "limit": 10},
+      "executedAt": "2026-08-10T15:43:54.000Z",
+      "dataVersion": "oss-manifest:sha256:10a42380ccc5c45e8059aea936d299a2e031533c72160e082e4a786715316af6",
+      "resultHash": "sha256:31fb5def9baedd38d8b3c7e8263f8c767bf035d83c6de0f483528dcf29a2e6b0"
+    }
+  ],
+  "facts": [
+    {"id": "f-jd-q1-gmv", "metric": "gmv", "value": 179351473.51, "unit": "CNY", "platform": "jd", "period": "2026-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-jd-first-quarter", "selector": {}}]},
+    {"id": "f-jd-q1-units", "metric": "units", "value": 87387, "unit": "units", "platform": "jd", "period": "2026-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-jd-first-quarter", "selector": {}}]},
+    {"id": "f-jd-q1-asp", "metric": "asp", "value": 2052.3816301051643, "unit": "CNY", "platform": "jd", "period": "2026-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-jd-first-quarter", "selector": {}}]},
+    {"id": "f-jd-q2-gmv", "metric": "gmv", "value": 232632958.7599999, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-jd-second-quarter", "selector": {}}]},
+    {"id": "f-jd-q2-units", "metric": "units", "value": 128651, "unit": "units", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-jd-second-quarter", "selector": {}}]},
+    {"id": "f-jd-q2-asp", "metric": "asp", "value": 1808.248352208688, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-jd-second-quarter", "selector": {}}]},
+    {"id": "f-tmall-q1-gmv", "metric": "gmv", "value": 68633124.54999998, "unit": "CNY", "platform": "tmall", "period": "2026-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-tmall-first-quarter", "selector": {}}]},
+    {"id": "f-tmall-q1-units", "metric": "units", "value": 30349, "unit": "units", "platform": "tmall", "period": "2026-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-tmall-first-quarter", "selector": {}}]},
+    {"id": "f-tmall-q1-asp", "metric": "asp", "value": 2261.4624715806117, "unit": "CNY", "platform": "tmall", "period": "2026-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-tmall-first-quarter", "selector": {}}]},
+    {"id": "f-tmall-q2-gmv", "metric": "gmv", "value": 87521616.89000002, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-tmall-second-quarter", "selector": {}}]},
+    {"id": "f-tmall-q2-units", "metric": "units", "value": 37489, "unit": "units", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-tmall-second-quarter", "selector": {}}]},
+    {"id": "f-tmall-q2-asp", "metric": "asp", "value": 2334.5945981487907, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [{"queryId": "q-tmall-second-quarter", "selector": {}}]},
+    {"id": "f-jd-gmv-growth", "metric": "quarter-over-quarter-gmv-growth", "value": 29.70786032991757, "unit": "percent", "platform": "jd", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "(f-jd-q2-gmv / f-jd-q1-gmv - 1) * 100", "inputFactIds": ["f-jd-q1-gmv", "f-jd-q2-gmv"]}},
+    {"id": "f-jd-units-growth", "metric": "quarter-over-quarter-units-growth", "value": 47.21983819103528, "unit": "percent", "platform": "jd", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "(f-jd-q2-units / f-jd-q1-units - 1) * 100", "inputFactIds": ["f-jd-q1-units", "f-jd-q2-units"]}},
+    {"id": "f-jd-asp-growth", "metric": "quarter-over-quarter-asp-growth", "value": -11.895120981177698, "unit": "percent", "platform": "jd", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "(f-jd-q2-asp / f-jd-q1-asp - 1) * 100", "inputFactIds": ["f-jd-q1-asp", "f-jd-q2-asp"]}},
+    {"id": "f-tmall-gmv-growth", "metric": "quarter-over-quarter-gmv-growth", "value": 27.520956482521154, "unit": "percent", "platform": "tmall", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "(f-tmall-q2-gmv / f-tmall-q1-gmv - 1) * 100", "inputFactIds": ["f-tmall-q1-gmv", "f-tmall-q2-gmv"]}},
+    {"id": "f-tmall-units-growth", "metric": "quarter-over-quarter-units-growth", "value": 23.52631058683976, "unit": "percent", "platform": "tmall", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "(f-tmall-q2-units / f-tmall-q1-units - 1) * 100", "inputFactIds": ["f-tmall-q1-units", "f-tmall-q2-units"]}},
+    {"id": "f-tmall-asp-growth", "metric": "quarter-over-quarter-asp-growth", "value": 3.2338421480443413, "unit": "percent", "platform": "tmall", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "(f-tmall-q2-asp / f-tmall-q1-asp - 1) * 100", "inputFactIds": ["f-tmall-q1-asp", "f-tmall-q2-asp"]}},
+    {"id": "f-jd-apr-units", "metric": "units", "value": 34383, "unit": "units", "platform": "jd", "period": "2026-04", "dimensions": {"category_l3": "智能眼镜", "month": "2026-04-01"}, "sources": [{"queryId": "q-jd-monthly-half", "selector": {"month": "2026-04-01"}}]},
+    {"id": "f-jd-may-units", "metric": "units", "value": 42722, "unit": "units", "platform": "jd", "period": "2026-05", "dimensions": {"category_l3": "智能眼镜", "month": "2026-05-01"}, "sources": [{"queryId": "q-jd-monthly-half", "selector": {"month": "2026-05-01"}}]},
+    {"id": "f-jd-jun-units", "metric": "units", "value": 51546, "unit": "units", "platform": "jd", "period": "2026-06", "dimensions": {"category_l3": "智能眼镜", "month": "2026-06-01"}, "sources": [{"queryId": "q-jd-monthly-half", "selector": {"month": "2026-06-01"}}]},
+    {"id": "f-jd-jun-vs-apr-units", "metric": "june-vs-april-units-growth", "value": 49.91711019980804, "unit": "percent", "platform": "jd", "period": "2026-06-vs-2026-04", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "(f-jd-jun-units / f-jd-apr-units - 1) * 100", "inputFactIds": ["f-jd-apr-units", "f-jd-jun-units"]}},
+    {"id": "f-tmall-apr-units", "metric": "units", "value": 13178, "unit": "units", "platform": "tmall", "period": "2026-04", "dimensions": {"category_l3": "智能眼镜", "month": "2026-04-01"}, "sources": [{"queryId": "q-tmall-monthly-second-quarter", "selector": {"month": "2026-04-01"}}]},
+    {"id": "f-tmall-may-units", "metric": "units", "value": 10834, "unit": "units", "platform": "tmall", "period": "2026-05", "dimensions": {"category_l3": "智能眼镜", "month": "2026-05-01"}, "sources": [{"queryId": "q-tmall-monthly-second-quarter", "selector": {"month": "2026-05-01"}}]},
+    {"id": "f-tmall-jun-units", "metric": "units", "value": 13477, "unit": "units", "platform": "tmall", "period": "2026-06", "dimensions": {"category_l3": "智能眼镜", "month": "2026-06-01"}, "sources": [{"queryId": "q-tmall-monthly-second-quarter", "selector": {"month": "2026-06-01"}}]},
+    {"id": "f-jd-q2-rokid-gmv", "metric": "gmv", "value": 69255086.25, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "ROKID"}, "sources": [{"queryId": "q-jd-brands-second-quarter", "selector": {"brand": "ROKID"}}]},
+    {"id": "f-jd-q2-huawei-a-gmv", "metric": "gmv", "value": 19615070.700000003, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "华为（HUAWEI）"}, "sources": [{"queryId": "q-jd-brands-second-quarter", "selector": {"brand": "华为（HUAWEI）"}}]},
+    {"id": "f-jd-q2-huawei-b-gmv", "metric": "gmv", "value": 12037342.479999997, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "华为/HUAWEI"}, "sources": [{"queryId": "q-jd-brands-second-quarter", "selector": {"brand": "华为/HUAWEI"}}]},
+    {"id": "f-jd-q2-huawei-gmv", "metric": "gmv", "value": 31652413.18, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "华为"}, "methodologyNote": "合并平台原始品牌值“华为（HUAWEI）”与“华为/HUAWEI”。", "sources": [], "derivation": {"formula": "f-jd-q2-huawei-a-gmv + f-jd-q2-huawei-b-gmv", "inputFactIds": ["f-jd-q2-huawei-a-gmv", "f-jd-q2-huawei-b-gmv"]}},
+    {"id": "f-jd-q2-qianwen-gmv", "metric": "gmv", "value": 26518432.159999996, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "千问"}, "sources": [{"queryId": "q-jd-brands-second-quarter", "selector": {"brand": "千问"}}]},
+    {"id": "f-jd-q2-inmo-gmv", "metric": "gmv", "value": 19774725.360000003, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "INMO"}, "sources": [{"queryId": "q-jd-brands-second-quarter", "selector": {"brand": "INMO"}}]},
+    {"id": "f-jd-q2-quark-gmv", "metric": "gmv", "value": 14333723.25, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "夸克"}, "sources": [{"queryId": "q-jd-brands-second-quarter", "selector": {"brand": "夸克"}}]},
+    {"id": "f-jd-q2-top-five-gmv", "metric": "top-five-brand-gmv", "value": 161534380.20000002, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "f-jd-q2-rokid-gmv + f-jd-q2-huawei-gmv + f-jd-q2-qianwen-gmv + f-jd-q2-inmo-gmv + f-jd-q2-quark-gmv", "inputFactIds": ["f-jd-q2-rokid-gmv", "f-jd-q2-huawei-gmv", "f-jd-q2-qianwen-gmv", "f-jd-q2-inmo-gmv", "f-jd-q2-quark-gmv"]}},
+    {"id": "f-jd-q2-top-five-share", "metric": "top-five-brand-gmv-share", "value": 69.43744388629386, "unit": "percent", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "f-jd-q2-top-five-gmv / f-jd-q2-gmv * 100", "inputFactIds": ["f-jd-q2-top-five-gmv", "f-jd-q2-gmv"]}},
+    {"id": "f-tmall-q2-rokid-gmv", "metric": "gmv", "value": 27922438.759999998, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "Rokid"}, "sources": [{"queryId": "q-tmall-brands-second-quarter", "selector": {"brand": "Rokid"}}]},
+    {"id": "f-tmall-q2-qianwen-gmv", "metric": "gmv", "value": 20313663.97, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "千问"}, "sources": [{"queryId": "q-tmall-brands-second-quarter", "selector": {"brand": "千问"}}]},
+    {"id": "f-tmall-q2-quark-gmv", "metric": "gmv", "value": 11837696.350000001, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "夸克"}, "sources": [{"queryId": "q-tmall-brands-second-quarter", "selector": {"brand": "夸克"}}]},
+    {"id": "f-tmall-q2-huawei-gmv", "metric": "gmv", "value": 7492529.3100000005, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "Huawei/华为"}, "sources": [{"queryId": "q-tmall-brands-second-quarter", "selector": {"brand": "Huawei/华为"}}]},
+    {"id": "f-tmall-q2-inmo-gmv", "metric": "gmv", "value": 4344564.1, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜", "brand": "INMO"}, "sources": [{"queryId": "q-tmall-brands-second-quarter", "selector": {"brand": "INMO"}}]},
+    {"id": "f-tmall-q2-top-five-gmv", "metric": "top-five-brand-gmv", "value": 71910892.49, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "f-tmall-q2-rokid-gmv + f-tmall-q2-qianwen-gmv + f-tmall-q2-quark-gmv + f-tmall-q2-huawei-gmv + f-tmall-q2-inmo-gmv", "inputFactIds": ["f-tmall-q2-rokid-gmv", "f-tmall-q2-qianwen-gmv", "f-tmall-q2-quark-gmv", "f-tmall-q2-huawei-gmv", "f-tmall-q2-inmo-gmv"]}},
+    {"id": "f-tmall-q2-top-five-share", "metric": "top-five-brand-gmv-share", "value": 82.16357860524894, "unit": "percent", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能眼镜"}, "sources": [], "derivation": {"formula": "f-tmall-q2-top-five-gmv / f-tmall-q2-gmv * 100", "inputFactIds": ["f-tmall-q2-top-five-gmv", "f-tmall-q2-gmv"]}},
+    {"id": "f-jd-learning-jan-gmv", "metric": "gmv", "value": 444916860.6400004, "unit": "CNY", "platform": "jd", "period": "2026-01", "dimensions": {"category_l3": "学习机", "month": "2026-01-01"}, "sources": [{"queryId": "q-jd-learning-device-monthly", "selector": {"month": "2026-01-01"}}]},
+    {"id": "f-jd-learning-feb-gmv", "metric": "gmv", "value": 409512905.4800003, "unit": "CNY", "platform": "jd", "period": "2026-02", "dimensions": {"category_l3": "学习机", "month": "2026-02-01"}, "sources": [{"queryId": "q-jd-learning-device-monthly", "selector": {"month": "2026-02-01"}}]},
+    {"id": "f-jd-learning-mar-gmv", "metric": "gmv", "value": 419225545.3300001, "unit": "CNY", "platform": "jd", "period": "2026-03", "dimensions": {"category_l3": "学习机", "month": "2026-03-01"}, "sources": [{"queryId": "q-jd-learning-device-monthly", "selector": {"month": "2026-03-01"}}]},
+    {"id": "f-jd-learning-apr-gmv", "metric": "gmv", "value": 249314613.4399998, "unit": "CNY", "platform": "jd", "period": "2026-04", "dimensions": {"category_l3": "学习机", "month": "2026-04-01"}, "sources": [{"queryId": "q-jd-learning-device-monthly", "selector": {"month": "2026-04-01"}}]},
+    {"id": "f-jd-learning-may-gmv", "metric": "gmv", "value": 297323706.8099991, "unit": "CNY", "platform": "jd", "period": "2026-05", "dimensions": {"category_l3": "学习机", "month": "2026-05-01"}, "sources": [{"queryId": "q-jd-learning-device-monthly", "selector": {"month": "2026-05-01"}}]},
+    {"id": "f-jd-learning-jun-gmv", "metric": "gmv", "value": 515803040.9399994, "unit": "CNY", "platform": "jd", "period": "2026-06", "dimensions": {"category_l3": "学习机", "month": "2026-06-01"}, "sources": [{"queryId": "q-jd-learning-device-monthly", "selector": {"month": "2026-06-01"}}]},
+    {"id": "f-jd-learning-q1-gmv", "metric": "gmv", "value": 1273655311.4500008, "unit": "CNY", "platform": "jd", "period": "2026-Q1", "dimensions": {"category_l3": "学习机"}, "sources": [], "derivation": {"formula": "f-jd-learning-jan-gmv + f-jd-learning-feb-gmv + f-jd-learning-mar-gmv", "inputFactIds": ["f-jd-learning-jan-gmv", "f-jd-learning-feb-gmv", "f-jd-learning-mar-gmv"]}},
+    {"id": "f-jd-learning-q2-gmv", "metric": "gmv", "value": 1062441361.1899984, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "学习机"}, "sources": [], "derivation": {"formula": "f-jd-learning-apr-gmv + f-jd-learning-may-gmv + f-jd-learning-jun-gmv", "inputFactIds": ["f-jd-learning-apr-gmv", "f-jd-learning-may-gmv", "f-jd-learning-jun-gmv"]}},
+    {"id": "f-jd-learning-gmv-growth", "metric": "quarter-over-quarter-gmv-growth", "value": -16.58328971435329, "unit": "percent", "platform": "jd", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "学习机"}, "sources": [], "derivation": {"formula": "(f-jd-learning-q2-gmv / f-jd-learning-q1-gmv - 1) * 100", "inputFactIds": ["f-jd-learning-q1-gmv", "f-jd-learning-q2-gmv"]}},
+    {"id": "f-jd-translation-jan-gmv", "metric": "gmv", "value": 28276145.209999986, "unit": "CNY", "platform": "jd", "period": "2026-01", "dimensions": {"category_l3": "翻译机/翻译设备", "month": "2026-01-01"}, "sources": [{"queryId": "q-jd-translation-device-monthly", "selector": {"month": "2026-01-01"}}]},
+    {"id": "f-jd-translation-feb-gmv", "metric": "gmv", "value": 25103292.44999999, "unit": "CNY", "platform": "jd", "period": "2026-02", "dimensions": {"category_l3": "翻译机/翻译设备", "month": "2026-02-01"}, "sources": [{"queryId": "q-jd-translation-device-monthly", "selector": {"month": "2026-02-01"}}]},
+    {"id": "f-jd-translation-mar-gmv", "metric": "gmv", "value": 30889708.55000001, "unit": "CNY", "platform": "jd", "period": "2026-03", "dimensions": {"category_l3": "翻译机/翻译设备", "month": "2026-03-01"}, "sources": [{"queryId": "q-jd-translation-device-monthly", "selector": {"month": "2026-03-01"}}]},
+    {"id": "f-jd-translation-apr-gmv", "metric": "gmv", "value": 33129138.46999999, "unit": "CNY", "platform": "jd", "period": "2026-04", "dimensions": {"category_l3": "翻译机/翻译设备", "month": "2026-04-01"}, "sources": [{"queryId": "q-jd-translation-device-monthly", "selector": {"month": "2026-04-01"}}]},
+    {"id": "f-jd-translation-may-gmv", "metric": "gmv", "value": 31278510.860000003, "unit": "CNY", "platform": "jd", "period": "2026-05", "dimensions": {"category_l3": "翻译机/翻译设备", "month": "2026-05-01"}, "sources": [{"queryId": "q-jd-translation-device-monthly", "selector": {"month": "2026-05-01"}}]},
+    {"id": "f-jd-translation-jun-gmv", "metric": "gmv", "value": 28709388.350000013, "unit": "CNY", "platform": "jd", "period": "2026-06", "dimensions": {"category_l3": "翻译机/翻译设备", "month": "2026-06-01"}, "sources": [{"queryId": "q-jd-translation-device-monthly", "selector": {"month": "2026-06-01"}}]},
+    {"id": "f-jd-translation-q1-gmv", "metric": "gmv", "value": 84269146.21, "unit": "CNY", "platform": "jd", "period": "2026-Q1", "dimensions": {"category_l3": "翻译机/翻译设备"}, "sources": [], "derivation": {"formula": "f-jd-translation-jan-gmv + f-jd-translation-feb-gmv + f-jd-translation-mar-gmv", "inputFactIds": ["f-jd-translation-jan-gmv", "f-jd-translation-feb-gmv", "f-jd-translation-mar-gmv"]}},
+    {"id": "f-jd-translation-q2-gmv", "metric": "gmv", "value": 93117037.68, "unit": "CNY", "platform": "jd", "period": "2026-Q2", "dimensions": {"category_l3": "翻译机/翻译设备"}, "sources": [], "derivation": {"formula": "f-jd-translation-apr-gmv + f-jd-translation-may-gmv + f-jd-translation-jun-gmv", "inputFactIds": ["f-jd-translation-apr-gmv", "f-jd-translation-may-gmv", "f-jd-translation-jun-gmv"]}},
+    {"id": "f-jd-translation-gmv-growth", "metric": "quarter-over-quarter-gmv-growth", "value": 10.49956225728328, "unit": "percent", "platform": "jd", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "翻译机/翻译设备"}, "sources": [], "derivation": {"formula": "(f-jd-translation-q2-gmv / f-jd-translation-q1-gmv - 1) * 100", "inputFactIds": ["f-jd-translation-q1-gmv", "f-jd-translation-q2-gmv"]}},
+    {"id": "f-jd-ai-recorder-mar-gmv", "metric": "gmv", "value": 55857001.44000001, "unit": "CNY", "platform": "jd", "period": "2026-03", "dimensions": {"category_l3": "录音笔/AI录音设备", "month": "2026-03-01"}, "methodologyNote": "该精确类目在本次查询的一月至二月没有返回月度结果，因此不计算季度环比。", "sources": [{"queryId": "q-jd-ai-recorder-monthly", "selector": {"month": "2026-03-01"}}]},
+    {"id": "f-jd-ai-recorder-jun-gmv", "metric": "gmv", "value": 43866061.16999998, "unit": "CNY", "platform": "jd", "period": "2026-06", "dimensions": {"category_l3": "录音笔/AI录音设备", "month": "2026-06-01"}, "methodologyNote": "该精确类目在本次查询的一月至二月没有返回月度结果，因此不计算季度环比。", "sources": [{"queryId": "q-jd-ai-recorder-monthly", "selector": {"month": "2026-06-01"}}]},
+    {"id": "f-jd-ai-recorder-mar-jun-growth", "metric": "june-vs-march-gmv-growth", "value": -21.467210843532936, "unit": "percent", "platform": "jd", "period": "2026-06-vs-2026-03", "dimensions": {"category_l3": "录音笔/AI录音设备"}, "sources": [], "derivation": {"formula": "(f-jd-ai-recorder-jun-gmv / f-jd-ai-recorder-mar-gmv - 1) * 100", "inputFactIds": ["f-jd-ai-recorder-mar-gmv", "f-jd-ai-recorder-jun-gmv"]}},
+    {"id": "f-tmall-smart-earbuds-q1-gmv", "metric": "gmv", "value": 7252457.960000001, "unit": "CNY", "platform": "tmall", "period": "2026-Q1", "dimensions": {"category_l3": "智能耳机"}, "sources": [{"queryId": "q-tmall-smart-earbuds-first-quarter", "selector": {}}]},
+    {"id": "f-tmall-smart-earbuds-q2-gmv", "metric": "gmv", "value": 6147199.16, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "智能耳机"}, "sources": [{"queryId": "q-tmall-smart-earbuds-second-quarter", "selector": {}}]},
+    {"id": "f-tmall-smart-earbuds-gmv-growth", "metric": "quarter-over-quarter-gmv-growth", "value": -15.239782237910426, "unit": "percent", "platform": "tmall", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "智能耳机"}, "sources": [], "derivation": {"formula": "(f-tmall-smart-earbuds-q2-gmv / f-tmall-smart-earbuds-q1-gmv - 1) * 100", "inputFactIds": ["f-tmall-smart-earbuds-q1-gmv", "f-tmall-smart-earbuds-q2-gmv"]}},
+    {"id": "f-tmall-learning-q1-gmv", "metric": "gmv", "value": 361865323.35999995, "unit": "CNY", "platform": "tmall", "period": "2026-Q1", "dimensions": {"category_l3": "学习机/教育伴学机/作业机"}, "sources": [{"queryId": "q-tmall-learning-device-first-quarter", "selector": {}}]},
+    {"id": "f-tmall-learning-q2-gmv", "metric": "gmv", "value": 468161297.5599999, "unit": "CNY", "platform": "tmall", "period": "2026-Q2", "dimensions": {"category_l3": "学习机/教育伴学机/作业机"}, "sources": [{"queryId": "q-tmall-learning-device-second-quarter", "selector": {}}]},
+    {"id": "f-tmall-learning-gmv-growth", "metric": "quarter-over-quarter-gmv-growth", "value": 29.37445710824629, "unit": "percent", "platform": "tmall", "period": "2026-Q2-vs-Q1", "dimensions": {"category_l3": "学习机/教育伴学机/作业机"}, "sources": [], "derivation": {"formula": "(f-tmall-learning-q2-gmv / f-tmall-learning-q1-gmv - 1) * 100", "inputFactIds": ["f-tmall-learning-q1-gmv", "f-tmall-learning-q2-gmv"]}}
+  ],
+  "findings": [
+    {"id": "finding-real-transactions", "statement": "京东和天猫智能眼镜二季度成交额与销量研究指标均高于一季度，两个平台都出现了可观察的成交增长信号。", "factIds": ["f-jd-gmv-growth", "f-jd-units-growth", "f-tmall-gmv-growth", "f-tmall-units-growth"], "confidence": "high", "caveats": ["研究指标不等同于平台结算或退货后实付，也不能单独证明长期使用或复购已经成立。"], "comparabilityAssessmentId": "comparison-jd-tmall"},
+    {"id": "finding-different-price-paths", "statement": "京东增长伴随均价下降，天猫增长伴随均价小幅上升，两个平台的扩张路径不同。", "factIds": ["f-jd-gmv-growth", "f-jd-units-growth", "f-jd-asp-growth", "f-tmall-gmv-growth", "f-tmall-units-growth", "f-tmall-asp-growth"], "confidence": "high", "caveats": ["均价变化反映商品组合与促销结构，不能直接解释为消费者偏好变化。"], "comparabilityAssessmentId": "comparison-jd-tmall"},
+    {"id": "finding-monthly-shape", "statement": "京东二季度销量逐月上升，天猫则先降后升；半年增长并非两个平台同步、均匀地扩张。", "factIds": ["f-jd-apr-units", "f-jd-may-units", "f-jd-jun-units", "f-tmall-apr-units", "f-tmall-may-units", "f-tmall-jun-units"], "confidence": "high", "caveats": ["月度变化仍可能受到新品、大促和供给节奏影响。"], "comparabilityAssessmentId": "comparison-jd-tmall"},
+    {"id": "finding-brand-concentration", "statement": "二季度成交额研究指标集中于少数品牌，前五品牌在京东和天猫分别贡献约七成和八成。", "factIds": ["f-jd-q2-top-five-share", "f-tmall-q2-top-five-share"], "confidence": "high", "caveats": ["品牌别名已按可确认映射合并；榜单查询返回前二十品牌，但前五品牌份额使用完整品类成交额作为分母。"], "comparabilityAssessmentId": "comparison-jd-tmall"},
+    {"id": "finding-ai-hardware-divergence", "statement": "相邻AI硬件代理类目的成交方向明显分化：智能眼镜与天猫学习机二季度增长，京东翻译设备温和增长，京东学习机与天猫智能耳机下降，AI录音设备也没有呈现同步上行。", "factIds": ["f-jd-gmv-growth", "f-tmall-gmv-growth", "f-jd-learning-gmv-growth", "f-jd-translation-gmv-growth", "f-jd-ai-recorder-mar-jun-growth", "f-tmall-smart-earbuds-gmv-growth", "f-tmall-learning-gmv-growth"], "confidence": "medium", "caveats": ["这些平台类目并不逐商品验证AI功能，只能作为相关硬件的零售代理。", "学习机在京东与天猫的原始类目定义不同，只比较各自平台内的变化方向。", "AI录音设备一月至二月没有返回月度结果，因此仅比较三月至六月，不与其他品类的季度环比直接排名。"], "comparabilityAssessmentId": "comparison-ai-hardware-proxies"}
+  ],
+  "comparabilityAssessments": [
+    {
+      "id": "comparison-jd-tmall",
+      "platforms": ["jd", "tmall"],
+      "decision": "directional-only",
+      "basis": "两平台均使用原始三级类目“智能眼镜”，时间范围与指标定义一致；但平台商品、品牌、商家和促销覆盖不同，因此只比较趋势、结构和方向，不合并成交额或销量。",
+      "caveats": ["平均成交价是平台内品类汇总值，不应被解释为同一商品的跨平台价差。"]
+    },
+    {
+      "id": "comparison-ai-hardware-proxies",
+      "platforms": ["jd", "tmall"],
+      "decision": "directional-only",
+      "basis": "所有结果使用券后销售额和2026年上半年月度数据，但不同平台的原始类目名称、商品覆盖和AI功能纯度不同；仅比较各代理类目在自身平台内的变化方向与季度变化率，不比较或合并绝对规模。",
+      "caveats": ["学习机、智能耳机和翻译设备并不保证每件商品都以AI功能为核心卖点。", "AI录音设备缺少一月至二月返回行，不能计算完整季度环比。"]
+    }
+  ]
+}

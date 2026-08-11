@@ -1,0 +1,16 @@
+{
+  "market": "AI 眼镜",
+  "platforms": ["jd", "tmall"],
+  "period": "2026-01/2026-06",
+  "retail_proxies": {
+    "jd": "category_l3 = 智能眼镜",
+    "tmall": "category_l3 = 智能眼镜"
+  },
+  "adjacent_markets": ["学习机", "智能耳机", "翻译设备", "AI 录音设备"],
+  "decision_question": "AI 眼镜是否已从概念热度进入可验证的商业化阶段？",
+  "falsifiers": [
+    "增长只来自单月促销，后续月份未形成更高销量基线",
+    "增量只来自极少数新品或商品链接迁移",
+    "退货、激活和持续使用证据与下单增长背离"
+  ]
+}

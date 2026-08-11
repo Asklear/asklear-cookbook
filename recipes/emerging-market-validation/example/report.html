@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Asklear AI 眼镜与 AI 硬件消费研究：从平台成交、商品下钻和产品路线看，为什么真正卖出去的不是 AI，而是少掏一次手机。">
+  <meta name="theme-color" content="#f3efe7">
+  <title>AI 眼镜真正卖的不是 AI，而是少掏一次手机｜Asklear</title>
+  <style>
+    :root {
+      --paper: #fffdf8;
+      --canvas: #f3efe7;
+      --ink: #162522;
+      --muted: #66726d;
+      --line: #d9ddd7;
+      --green: #0d6f5c;
+      --green-soft: #dceee8;
+      --orange: #e76f3d;
+      --orange-soft: #fff0e6;
+      --navy: #173b55;
+      --shadow: 0 24px 70px rgba(32, 48, 42, .10);
+      --serif: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
+      --sans: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 2%, rgba(13,111,92,.10), transparent 28rem),
+        radial-gradient(circle at 96% 18%, rgba(231,111,61,.09), transparent 24rem),
+        var(--canvas);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    .progress {
+      position: fixed; z-index: 100; inset: 0 auto auto 0; height: 4px;
+      width: 0; background: linear-gradient(90deg, var(--green), var(--orange));
+    }
+    .topbar {
+      width: min(1180px, calc(100% - 40px)); margin: 0 auto;
+      height: 68px; display: flex; align-items: center; justify-content: space-between;
+      font-size: 13px; letter-spacing: .04em;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 760; color: var(--navy); }
+    .brand-mark {
+      width: 30px; height: 30px; display: grid; place-items: center; border-radius: 9px;
+      color: #fff; background: var(--green); font-family: Georgia, serif; font-size: 17px;
+      box-shadow: 0 6px 16px rgba(13,111,92,.20);
+    }
+    .top-actions { display: flex; gap: 8px; }
+    button {
+      border: 1px solid rgba(22,37,34,.14); background: rgba(255,253,248,.72);
+      color: var(--ink); border-radius: 999px; padding: 8px 13px; cursor: pointer;
+      font: inherit; transition: .18s ease;
+    }
+    button:hover { transform: translateY(-1px); border-color: var(--green); color: var(--green); }
+    .hero {
+      width: min(1180px, calc(100% - 40px)); margin: 18px auto 44px;
+      display: grid; grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 40px; align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--green);
+      font-size: 12px; font-weight: 780; letter-spacing: .16em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--orange); }
+    h1 {
+      max-width: 840px; margin: 18px 0; font-family: var(--serif);
+      font-size: clamp(42px, 6.1vw, 82px); font-weight: 740; line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+    .deck {
+      max-width: 780px; margin: 0; color: #43504c;
+      font-family: var(--serif); font-size: clamp(18px, 2vw, 23px); line-height: 1.72;
+    }
+    .meta { margin-top: 24px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .hero-stats { display: grid; gap: 10px; }
+    .stat {
+      position: relative; overflow: hidden; padding: 18px 20px; border-radius: 18px;
+      background: rgba(255,253,248,.78); border: 1px solid rgba(22,37,34,.10);
+      backdrop-filter: blur(9px);
+    }
+    .stat::after {
+      content: ""; position: absolute; width: 62px; height: 62px; border-radius: 50%;
+      right: -22px; bottom: -26px; background: var(--green-soft);
+    }
+    .stat strong { display: block; font: 760 31px/1.05 var(--serif); color: var(--green); }
+    .stat span { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; }
+    .thesis {
+      width: min(1180px, calc(100% - 40px)); margin: 0 auto 44px; padding: 22px 26px;
+      border-left: 5px solid var(--orange); border-radius: 0 17px 17px 0;
+      background: var(--orange-soft); font-family: var(--serif); font-size: 20px; line-height: 1.65;
+    }
+    .layout {
+      width: min(1180px, calc(100% - 40px)); margin: 0 auto 100px;
+      display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 46px;
+      align-items: start;
+    }
+    .toc {
+      position: sticky; top: 28px; max-height: calc(100vh - 56px); overflow: auto;
+      padding: 20px 16px; border-radius: 18px;
+      background: rgba(255,253,248,.67); border: 1px solid rgba(22,37,34,.09);
+    }
+    .toc-label { margin: 0 0 13px 8px; font-size: 11px; font-weight: 780; color: var(--muted); letter-spacing: .14em; }
+    .toc a {
+      display: block; padding: 7px 8px; color: #68736f; border-radius: 8px;
+      text-decoration: none; font-size: 12px; line-height: 1.45;
+    }
+    .toc a:hover, .toc a.active { color: var(--green); background: var(--green-soft); }
+    .article {
+      min-width: 0; padding: clamp(28px, 5vw, 64px); border-radius: 24px;
+      background: var(--paper); box-shadow: var(--shadow);
+    }
+    .article > h2:first-of-type { margin-top: 0; }
+    .article h2 {
+      position: relative; scroll-margin-top: 22px; margin: 76px 0 26px;
+      padding-top: 22px; border-top: 1px solid var(--line);
+      font-family: var(--serif); font-size: clamp(27px, 3.2vw, 39px); line-height: 1.3;
+      letter-spacing: -.025em;
+    }
+    .article h2::before {
+      content: attr(data-index); display: block; margin-bottom: 10px;
+      color: var(--orange); font: 760 12px/1 var(--sans); letter-spacing: .14em;
+    }
+    .article h3 {
+      scroll-margin-top: 22px; margin: 46px 0 18px; color: var(--navy);
+      font-family: var(--serif); font-size: 24px; line-height: 1.45;
+    }
+    .article p {
+      margin: 18px 0; font-family: var(--serif); font-size: 18px;
+      line-height: 2.02; letter-spacing: .015em;
+    }
+    .article strong { color: #0a5648; font-weight: 760; }
+    .article a {
+      color: var(--green); text-decoration-color: rgba(13,111,92,.35);
+      text-underline-offset: 3px; overflow-wrap: anywhere;
+    }
+    .article ul, .article ol {
+      margin: 18px 0; padding-left: 1.45em; font-family: var(--serif);
+      font-size: 17px; line-height: 1.9;
+    }
+    .article li { margin: 7px 0; padding-left: .2em; }
+    .article blockquote {
+      margin: 24px 0; padding: 18px 22px; border: 0; border-radius: 14px;
+      background: #edf4f1; color: #39504a;
+    }
+    .article blockquote p { margin: 4px 0; font: 14px/1.75 var(--sans); }
+    .table-wrap {
+      width: 100%; overflow-x: auto; margin: 26px 0 32px;
+      border: 1px solid var(--line); border-radius: 14px;
+    }
+    table { width: 100%; min-width: 610px; border-collapse: collapse; font-size: 14px; line-height: 1.55; }
+    th { padding: 13px 14px; color: #fff; background: var(--navy); text-align: left; white-space: nowrap; }
+    td { padding: 13px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+    tbody tr:nth-child(even) { background: #f5f7f4; }
+    td:not(:first-child), th:not(:first-child) { font-variant-numeric: tabular-nums; }
+    hr { margin: 58px 0; border: 0; height: 1px; background: var(--line); }
+    code {
+      padding: 2px 6px; border-radius: 5px; background: #edf1ee;
+      font: .86em ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .ending {
+      margin: 54px 0 16px; padding: 26px; border-radius: 18px; color: #fff;
+      background: var(--green); font-family: var(--serif); font-size: 20px; line-height: 1.8;
+    }
+    .backtop {
+      position: fixed; right: 22px; bottom: 22px; z-index: 20;
+      width: 42px; height: 42px; padding: 0; opacity: 0; pointer-events: none;
+      background: var(--ink); color: #fff; border: 0; box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+    .backtop.show { opacity: 1; pointer-events: auto; }
+    footer {
+      width: min(760px, calc(100% - 40px)); margin: -60px auto 48px;
+      color: var(--muted); text-align: center; font-size: 12px; line-height: 1.8;
+    }
+    .mobile-toc { display: none; }
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .stat { padding: 15px; }
+      .stat strong { font-size: 25px; }
+      .layout { grid-template-columns: 1fr; gap: 14px; }
+      .toc { display: none; }
+      .mobile-toc {
+        display: block; position: sticky; top: 10px; z-index: 15;
+        padding: 11px 14px; border-radius: 12px; background: rgba(255,253,248,.93);
+        border: 1px solid var(--line); backdrop-filter: blur(9px);
+      }
+      .mobile-toc summary { cursor: pointer; color: var(--green); font-size: 13px; font-weight: 700; }
+      .mobile-toc nav { max-height: 50vh; margin-top: 10px; overflow: auto; }
+      .mobile-toc a { display: block; padding: 6px 0; color: var(--muted); font-size: 12px; text-decoration: none; }
+    }
+    @media (max-width: 620px) {
+      .topbar, .hero, .thesis, .layout { width: min(100% - 24px, 1180px); }
+      .topbar { height: 58px; }
+      .top-actions button:first-child { display: none; }
+      .hero { margin-top: 20px; gap: 24px; }
+      h1 { font-size: 43px; }
+      .deck { font-size: 18px; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .stat { display: flex; align-items: baseline; justify-content: space-between; }
+      .stat span { margin: 0 26px 0 10px; text-align: right; }
+      .thesis { margin-bottom: 24px; padding: 18px; font-size: 17px; }
+      .article { padding: 25px 20px; border-radius: 18px; }
+      .article h2 { margin-top: 58px; font-size: 29px; }
+      .article h3 { font-size: 22px; }
+      .article p { font-size: 17px; line-height: 1.95; }
+      .article ul, .article ol { font-size: 16px; padding-left: 1.25em; }
+    }
+    @media print {
+      body { background: #fff; }
+      .progress, .topbar, .toc, .mobile-toc, .backtop { display: none !important; }
+      .hero, .thesis, .layout { width: 100%; }
+      .hero { grid-template-columns: 1fr; margin-top: 0; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .article { padding: 0; box-shadow: none; }
+      .layout { display: block; }
+      .article a { color: inherit; }
+      .article h2, .article h3, table, blockquote { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">A</span><span>ASKLEAR · 消费研究</span></div>
+    <div class="top-actions">
+      <button type="button" id="toggle-wide">宽屏阅读</button>
+      <button type="button" onclick="window.print()">打印 / 导出 PDF</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow">AI Hardware · 2026 H1</span>
+      <h1>AI 眼镜真正卖的不是 AI，而是少掏一次手机</h1>
+      <p class="deck">1300 元产品快速放量，8000 元产品降价后仍在下跌。精简版保留商品证据，直接回答消费者究竟为什么买单。</p>
+      <div class="meta">Asklear Research · 研究时间：2026 年 8 月 11 日<br>数据范围：京东、天猫 2026 年 1—6 月月度电商数据</div>
+    </div>
+    <div class="hero-stats" aria-label="关键数据">
+      <div class="stat"><strong>+29.7%</strong><span>京东 Q2 成交额环比</span></div>
+      <div class="stat"><strong>+47.2%</strong><span>京东 Q2 销量环比</span></div>
+      <div class="stat"><strong>+27.5%</strong><span>天猫 Q2 成交额环比</span></div>
+    </div>
+  </section>
+
+  <div class="thesis"><strong>核心判断：</strong>AI 不是购买理由，少一步操作才是。第一阶段的赢家不会是把最多功能塞进镜框的公司，而是让用户连续 30 天都愿意戴上、每天自然完成一个任务的公司。</div>
+
+  <main class="layout">
+    <aside class="toc" aria-label="文章目录">
+      <div class="toc-label">CONTENTS</div>
+      <nav id="toc"></nav>
+    </aside>
+    <div>
+      <details class="mobile-toc">
+        <summary>展开文章目录</summary>
+        <nav id="mobile-toc-nav"></nav>
+      </details>
+      <article class="article" id="article"></article>
+    </div>
+  </main>
+
+  <button class="backtop" id="backtop" type="button" aria-label="回到顶部">↑</button>
+  <footer>Asklear 公众号精简版预览稿 · 平台类目为观察 AI 眼镜的代理口径 · 成交不等于激活与持续佩戴</footer>
+
+  <script id="article-source" type="text/plain">
+# AI 眼镜真正卖的不是 AI，而是少掏一次手机
+
+> Asklear 消费研究｜2026 年 8 月 11 日
+> 核心数据：Asklear 京东、天猫 2026 年 1—6 月月度电商数据
+
+同样是 AI 眼镜，消费者给出了完全不同的答案。
+
+2026 年第二季度，京东一款约 1300 元、主打第一视角拍摄的 Looki L1，销量较第一季度增长 77.7%；约 3000 元、带显示和提词的 ROKID Glasses，销量增长 22.2%；售价约 8000—9000 元的全彩光波导产品 RayNeo X3 Pro，即使平均成交价下降 10.9%，销量仍下降 16.3%。
+
+与此同时，整个京东智能眼镜类目的销量增长了 47.2%。
+
+便宜的不一定赢，带显示的不一定输，技术最完整的也不一定卖得最好。AI 眼镜确实卖起来了，但消费者购买的究竟是 AI，还是某个更简单的东西？
+
+答案是一个更短的动作：拍摄时不用再掏手机，翻译时不用再低头，提醒可以直接出现在眼前。
+
+## 一、AI 眼镜真的卖起来了吗？
+
+这一轮热度已经不只存在于发布会里。
+
+IDC 统计，2026 年第一季度全球无显示智能眼镜出货约 225 万台，同比增长 167%；Omdia 使用另一套定义，估算 2025 年全球 AI 眼镜出货 870 万台。两者的绝对数字不能直接比较，但都指向同一趋势：轻量智能眼镜正在成为可穿戴设备里明确的增长来源。[IDC 市场数据](https://www.idc.com/promo/arvr/?os=av)｜[Omdia 市场追踪](https://omdia.tech.informa.com/pr/2026/mar/global-ai-glasses-shipments-reach-8point7-million-units-with-mainland-china-emerging-as-the-fastest-growing-market)
+
+出货可能来自厂商备货。要判断消费者是否真的下单，还要看零售端。
+
+| 平台 | 2026 Q1 成交额 | 2026 Q2 成交额 | 成交额环比 | 销量环比 | 平均成交价环比 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 京东 | 1.79 亿元 | 2.33 亿元 | +29.7% | +47.2% | -11.9% |
+| 天猫 | 6863 万元 | 8752 万元 | +27.5% | +23.5% | +3.2% |
+
+两个平台都量额双增，但路径不同。京东销量增速远高于成交额，平均成交价下降 11.9%，更像促销与入门产品推动的放量；天猫则销量、均价同时上升，可能与高价新品和旗舰店结构有关。
+
+京东月销量还从 4 月的 34,383 件增至 6 月的 51,546 件，提升 49.9%；天猫同期先降后升。因此可以确认的是：二季度零售增长已经成立，京东还出现连续三个月放量；618 之后能否保持，仍待观察。
+
+平台类目只是观察 AI 眼镜的代理口径，成交也不等于退货后实付、激活或持续佩戴。我们能确认“有人下单了”，还不能确认“买回去以后每天都在用”。
+
+而且，类目增长不代表所有产品一起变好卖。
+
+## 二、类目涨了近 30%，增量却只流向少数商品
+
+京东四个精确商品 ID，走出了四条完全不同的曲线：
+
+| 京东精确商品 | 主要定位 | Q2 成交额变化 | Q2 销量变化 | 平均成交价变化 |
+| --- | --- | ---: | ---: | ---: |
+| ROKID Glasses | 约 3000 元的显示、拍摄、翻译与提词 | +16.7% | +22.2% | -4.5% |
+| Looki L1 | 约 1300 元的拍摄与自动 Vlog | +54.3% | +77.7% | -13.2% |
+| INMO GO3 | 约 2000—3000 元的显示与翻译 | -13.5% | +21.2% | -28.6% |
+| RayNeo X3 Pro | 约 8000—9000 元的全彩光波导 | -25.4% | -16.3% | -10.9% |
+
+Looki L1 量额同时快速增长；INMO GO3 销量增加，却被价格下移拖累成交额；高价的 RayNeo X3 Pro 即使降价，量额仍然双降；ROKID 则证明带显示并非卖不动。
+
+消费者没有忠于“有显示”或“无显示”。他们选择的是能够把明确任务、可接受价格和佩戴成本压进同一副镜框的产品。
+
+天猫也一样。智能眼镜成交额二季度净增约 1889 万元，其中同一条 ROKID 链接增加 674 万元，解释净增的 35.7%；一条华为新品链接新增约 448 万元，解释 23.7%；两条标题都指向夸克 S1 的链接一减一增，合计只净增 154 万元。
+
+三组已识别商品结构合计解释了类目净增的 67.6%。这是商品 ID 层面的算术归因，不是品牌完整贡献，却揭示了经营现实：**行业增长集中在少数强商品、链接迁移和新品进入，不是所有 AI 眼镜一起变好卖。**
+
+商品标题也很诚实。二季度头部商品去重样本中，京东 47 个商品 ID 有 42 个提到拍摄或相机、34 个提到翻译；天猫 32 个商品 ID 中，26 个提到翻译、24 个提到拍摄或相机。大模型只是卖点之一。
+
+用户购买的不是抽象的“AI 入口”，而是一副能配、一台能拍、一项能立即演示的具体商品。
+
+**市场奖励的是产品纪律，不是工程野心。**
+
+## 三、消费者不排斥 AI 硬件，只排斥“AI 失效后一无所有”
+
+AI 眼镜的优势，不只是离眼睛近，更是没有发明一种新的携带方式。
+
+眼镜本来就有固定的佩戴位置、成熟的镜片供应链和稳定的社会习惯。AI 被添加到已有行为之上，不需要消费者再为陌生设备腾出衣袋、手腕或胸口。
+
+Humane AI Pin 是一个反例。它试图以语音和投影成为手机之外的新入口，却要求用户同时改变携带方式、交互习惯和服务关系。2025 年 2 月，Humane 宣布停止销售消费版 Ai Pin 并关闭服务器，设备的大部分联网功能随之失效。[Humane 服务终止说明](https://support.humane.com/hc/en-us/articles/34374173951373-Important-Update-for-Consumer-Ai-Pin-Customers)
+
+这不证明所有 Pin 都会失败，却给出一个有用的判断框架：
+
+> 如果 AI 今天失效，这件硬件还剩多少价值？
+
+眼镜关机后仍能矫正视力、遮阳；耳机仍能播放音乐；录音设备至少保留原始音频。AI Pin 失去云服务后，剩余价值却很有限。
+
+消费者并不排斥 AI 硬件。他们排斥的是：必须先相信 AI，硬件本身才有价值；或者一个手机 App 已经能完成的任务，被重新包装成另一台需要充电和随身携带的设备。
+
+眼镜的第一视角相机、开放式音频和抬头显示无法被口袋里的手机完整替代。硬件存在的理由先成立，AI 才能放大它。
+
+## 四、消费者没有选择技术路线，只选择了具体任务
+
+“AI 眼镜”其实是三种不同产品：
+
+| 路线 | 典型能力 | 优点 | 代价 | 先发场景 |
+| --- | --- | --- | --- | --- |
+| 音频型 | 通话、语音助手、录音 | 最轻、续航长 | 看不见环境 | 通勤、提醒、会议 |
+| 相机+音频型 | 拍摄、视觉问答、翻译 | 场景直观、无显示功耗 | 摄像隐私、依赖手机 | 旅行、运动、创作 |
+| 带显示型 | 提词、导航、字幕、通知 | 信息出现在眼前 | 更重、更贵、更耗电 | 商务、导航、无障碍 |
+
+相机越多，环境理解越强，隐私压力也越大；显示越完整，交互越自然，重量、发热和成本就越高；功能越少，越容易全天佩戴，也越难证明溢价。
+
+商品数据已经说明：无显示的 Looki 可以放量，带显示的 ROKID 也能进入头部，而更昂贵的全彩产品可能量额双降。消费者只判断一件事：这个任务值不值得我承担额外的价格、重量和维护成本。
+
+全球市场由 Meta 率先规模化。它的优势不只是模型和相机，还包括 Ray-Ban 的品牌、EssilorLuxottica 的光学渠道与 Meta 的内容生态。中国则是多路线实验场：Asklear 数据显示，2026 年第二季度，京东智能眼镜前五品牌贡献 69.4%的成交额，天猫前五品牌贡献 82.2%。
+
+中国品牌可以更快接入本地地图、支付、办公和手机生态，但路线多不等于购买理由多。如果一副眼镜同时讲拍摄、翻译、导航、会议、直播和智能家居，消费者最后可能记不住任何一项。
+
+这场竞争真正稀缺的能力，是“把电子产品当眼镜卖”：试戴、配镜、鼻托调整、镜片适配和售后。芯片参数容易追赶，持续佩戴体验却无法在一次发布会里补齐。
+
+## 五、真正的胜负，不是功能多少，而是第二天还戴不戴
+
+订单只是第一张选票。AI 眼镜还要通过三道门槛。
+
+### 第一关：愿意戴
+
+无显示音频眼镜可以接近 30 克，复杂全彩显示产品可能超过 70 克。眼镜多出的重量会集中在鼻梁和耳朵，压鼻、下滑和夹头，都比模型速度更早破坏体验。
+
+处方镜还涉及度数、瞳距、散光、镜框尺寸和售后换片，不是一行“支持配镜”能够解决的 SKU 选项。如果消费者不愿意戴出门，后面的 AI 就没有入口。
+
+### 第二关：能顺手完成任务
+
+眼镜的价值是比手机少一步，而不是把手机操作换一种方式重做一遍。每多一次唤醒失败、手机解锁、App 跳转和网络等待，优势都会减少。
+
+续航也不只是最长小时数，而是用户需要在什么时候摘下眼镜充电。真正应该追踪的是唤醒成功率、任务完成率，以及用户每周反复使用的前三项功能。
+
+### 第三关：佩戴者和旁观者都愿意信任
+
+当摄像头移到脸上，旁观者很难判断它是否在拍摄。Meta 使用前置指示灯，并在指示灯被遮挡时禁用相机；国内也已出现智能眼镜偷拍争议。[Meta 隐私说明](https://about.fb.com/news/2026/07/metas-ai-glasses-your-questions-answered/amp/)｜[智能眼镜偷拍争议](https://www.caheb.gov.cn/system/2026/06/26/030387675.shtml)
+
+不可关闭的拍摄提示、遮挡后禁用、本地处理优先和明确的数据保存期限，不应藏在用户协议里，而应成为商品卖点。隐私不是发布前的合规清单，而是整个品类的社会许可证。
+
+通过这三关后，AI 眼镜才可能占据手机很难拥有的位置：第一视角上下文。
+
+## 六、别急着取代手机，先成为手机的前置感官
+
+手机等待用户掏出来输入，眼镜天然处在任务发生之前。它知道用户正在看什么、听什么、准备做什么。
+
+但 AI 眼镜短期内不会取代手机。复杂输入、长内容消费和支付确认仍适合回到屏幕。更现实的位置，是成为手机的前置感官：获取第一视角信息、完成免手持交互，再把复杂任务交回手机。
+
+这会改变三类人的决策：
+
+- **品牌**应先选任务，再选路线。一款产品先占住一个十几秒就能演示清楚的任务，再扩展第二个。
+- **电商运营**应先卖场景，再卖 AI。京东二季度销量增长 47.2%的同时，均价下降 11.9%，因此大促峰值之外，更应追踪活动后 4—8 周的销量基线、退款和激活。
+- **投资者**应少看功能清单，多看 30 天佩戴率、任务完成率、退货原因、配镜完成率和每名活跃用户的云端成本。
+
+模型会趋同，第一视角场景、服务连接、佩戴习惯和信任不会自动趋同。
+
+## 七、未来 12—18 个月，我更愿意押注四件事
+
+第一，无显示相机眼镜仍会是最大众的入门形态。它在重量、价格、续航和可理解性之间最平衡。
+
+第二，轻显示产品会先在翻译、提词、导航和无障碍场景中建立市场。显示只有解决了足够重要的任务，才值得额外的重量和价格。
+
+第三，全彩 AR 会继续进步，但暂时不会成为大众主力。光学、功耗、重量和处方镜兼容，决定了它更可能先从专业用户和特定场景开始。
+
+第四，竞争会从模型数量转向配镜渠道、系统连接和真实佩戴留存。新品牌不仅要回答“能做什么”，还要回答在哪里试戴、怎样配镜、出了问题找谁，以及如何让旁观者放心。
+
+如果未来一年只能跟踪一个指标，我不会选择新品发布数量，而会选择：大促结束后，核心 SKU 的销量能否站在更高的基线上。
+
+## 结语：第一场胜利，只是让消费者愿意戴出门
+
+约 1300 元的拍摄眼镜可以快速放量，约 3000 元的显示眼镜也能进入头部，约 8000—9000 元的全彩产品却可能在降价后继续下跌。
+
+消费者没有忠于某条技术路线。他们为少一次掏手机、少一次低头，以及一个终于能顺利完成的任务付钱。
+
+所以，别再问 AI 眼镜什么时候取代手机。它的第一场胜利，是让消费者愿意戴出门；下一场胜利，才是让消费者第二天还愿意继续戴。
+
+---
+
+## 数据与方法说明
+
+- 电商数据来自 Asklear 对京东、天猫月度公开商品交易指标的研究性汇总，时间范围为 2026 年 1—6 月。
+- 京东与天猫均使用原始三级类目“智能眼镜”作为代理口径。该类目不能保证每件商品都具有相同 AI 能力。
+- 平台间只比较变化方向和结构，不合并成交额，也不把两平台绝对规模当作同口径市场份额。
+- 商品分析使用精确商品 ID；同名产品可能存在多个链接，已明确披露识别到的链接迁移。
+- 成交额与销量不是平台结算收入、退货后实付、激活量或持续佩戴人数。
+- 商品标题词频来自 Top 50 返回样本按商品 ID 去重后的描述性统计，不代表全类目属性渗透率。
+
+## 主要参考资料
+
+- [IDC AR/VR 市场追踪](https://www.idc.com/promo/arvr/?os=av)：全球智能眼镜出货与市场份额背景。
+- [Omdia 全球 AI 眼镜市场追踪](https://omdia.tech.informa.com/pr/2026/mar/global-ai-glasses-shipments-reach-8point7-million-units-with-mainland-china-emerging-as-the-fastest-growing-market)：全球出货、中国市场与显示产品结构。
+- [Humane 消费版 Ai Pin 服务终止说明](https://support.humane.com/hc/en-us/articles/34374173951373-Important-Update-for-Consumer-Ai-Pin-Customers)：AI 原生硬件服务终止案例。
+- [Meta AI 眼镜隐私说明](https://about.fb.com/news/2026/07/metas-ai-glasses-your-questions-answered/amp/)：拍摄指示灯与隐私设计背景。
+- [智能眼镜偷拍争议](https://www.caheb.gov.cn/system/2026/06/26/030387675.shtml)：国内旁观者隐私争议案例。
+  </script>
+  <script>
+    const raw = document.getElementById('article-source').textContent.trim();
+    const escapeHtml = value => value
+      .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+
+    function inline(value) {
+      let text = escapeHtml(value);
+      text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+      text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+        (_, label, url) => '<a href="' + url.replaceAll('&amp;', '&') + '" target="_blank" rel="noopener noreferrer">' + label + '</a>');
+      text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      return text;
+    }
+
+    const lines = raw.split(/\r?\n/);
+    const out = [];
+    let i = 0;
+    const isDivider = line => /^\s*---+\s*$/.test(line);
+    const isBlock = line =>
+      /^#{1,3}\s/.test(line) || /^>\s?/.test(line) || /^\s*[-*]\s+/.test(line) ||
+      /^\s*\d+\.\s+/.test(line) || /^\|/.test(line) || isDivider(line);
+
+    while (i < lines.length) {
+      const line = lines[i];
+      if (!line.trim()) { i++; continue; }
+
+      const heading = line.match(/^(#{1,3})\s+(.+)$/);
+      if (heading) {
+        const level = heading[1].length;
+        if (level > 1) out.push('<h' + level + '>' + inline(heading[2]) + '</h' + level + '>');
+        i++; continue;
+      }
+
+      if (isDivider(line)) { out.push('<hr>'); i++; continue; }
+
+      if (/^>\s?/.test(line)) {
+        const quote = [];
+        while (i < lines.length && /^>\s?/.test(lines[i])) {
+          quote.push(lines[i].replace(/^>\s?/, '')); i++;
+        }
+        out.push('<blockquote><p>' + quote.map(inline).join('<br>') + '</p></blockquote>');
+        continue;
+      }
+
+      if (/^\s*[-*]\s+/.test(line)) {
+        const items = [];
+        while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) {
+          items.push(lines[i].replace(/^\s*[-*]\s+/, '')); i++;
+        }
+        out.push('<ul>' + items.map(x => '<li>' + inline(x) + '</li>').join('') + '</ul>');
+        continue;
+      }
+
+      if (/^\s*\d+\.\s+/.test(line)) {
+        const items = [];
+        while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) {
+          items.push(lines[i].replace(/^\s*\d+\.\s+/, '')); i++;
+        }
+        out.push('<ol>' + items.map(x => '<li>' + inline(x) + '</li>').join('') + '</ol>');
+        continue;
+      }
+
+      if (/^\|/.test(line) && i + 1 < lines.length && /^\|?\s*:?-{3,}/.test(lines[i + 1])) {
+        const rows = [];
+        while (i < lines.length && /^\|/.test(lines[i])) {
+          rows.push(lines[i].replace(/^\||\|$/g, '').split('|').map(x => x.trim())); i++;
+        }
+        const head = rows[0];
+        const body = rows.slice(2);
+        out.push('<div class="table-wrap"><table><thead><tr>' +
+          head.map(x => '<th>' + inline(x) + '</th>').join('') +
+          '</tr></thead><tbody>' +
+          body.map(row => '<tr>' + row.map(x => '<td>' + inline(x) + '</td>').join('') + '</tr>').join('') +
+          '</tbody></table></div>');
+        continue;
+      }
+
+      const paragraph = [];
+      while (i < lines.length && lines[i].trim() && !isBlock(lines[i])) {
+        paragraph.push(lines[i].trim()); i++;
+      }
+      if (!paragraph.length) { paragraph.push(line.trim()); i++; }
+      out.push('<p>' + inline(paragraph.join(' ')) + '</p>');
+    }
+
+    const article = document.getElementById('article');
+    article.innerHTML = out.join('');
+    const headings = [...article.querySelectorAll('h2')];
+    const slugCount = new Map();
+    const slugify = text => {
+      const base = text.replace(/[，。！？：；、“”‘’（）()\s]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 54) || 'section';
+      const count = (slugCount.get(base) || 0) + 1; slugCount.set(base, count);
+      return count === 1 ? base : base + '-' + count;
+    };
+
+    const links = headings.map((heading, index) => {
+      heading.id = slugify(heading.textContent);
+      heading.dataset.index = String(index + 1).padStart(2, '0');
+      return '<a href="#' + heading.id + '">' + heading.textContent + '</a>';
+    }).join('');
+    document.getElementById('toc').innerHTML = links;
+    document.getElementById('mobile-toc-nav').innerHTML = links;
+
+    const tocLinks = [...document.querySelectorAll('.toc a')];
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (!visible) return;
+        tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + visible.target.id));
+      }, { rootMargin: '-10% 0px -75% 0px' });
+      headings.forEach(h => observer.observe(h));
+    }
+
+    const progress = document.getElementById('progress');
+    const backtop = document.getElementById('backtop');
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+      backtop.classList.toggle('show', scrollY > 720);
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    backtop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+    document.getElementById('toggle-wide').addEventListener('click', event => {
+      const wide = document.querySelector('.layout').style.maxWidth === 'none';
+      document.querySelector('.layout').style.maxWidth = wide ? '' : 'none';
+      event.currentTarget.textContent = wide ? '宽屏阅读' : '恢复版心';
+    });
+
+    document.querySelectorAll('.mobile-toc a').forEach(a => a.addEventListener('click', () => {
+      document.querySelector('.mobile-toc').open = false;
+    }));
+
+    const paragraphs = [...article.querySelectorAll('p')];
+    const finalLine = paragraphs.find(p => p.textContent.includes('它的下一场胜利') && p.textContent.includes('第二天'));
+    if (finalLine) finalLine.classList.add('ending');
+  </script>
+</body>
+</html>

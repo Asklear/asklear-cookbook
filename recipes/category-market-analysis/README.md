@@ -10,9 +10,11 @@
 
 ## Use with your Agent
 
-使用前先连接 Asklear MCP，然后把下面的指令发给 Agent：
+把下面的指令发给 Agent；尚未连接时，Agent 会先完成官方 Setup，再继续这个 Recipe：
 
 ```text
+如果尚未连接 Asklear，请先读取 https://dashboard.asklear.cn/agent-setup 完成连接；授权后继续本任务，不要要求我复制 API Key。
+
 请读取下面的 workflow，并使用 Asklear 完成类目市场分析：
 https://raw.githubusercontent.com/Asklear/asklear-cookbook/main/recipes/category-market-analysis/workflow.md
 

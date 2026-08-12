@@ -16,9 +16,11 @@
 
 ## Use with your Agent
 
-连接 Asklear MCP，把下面的指令发给 Agent。通常只需填写赛道。
+把下面的指令发给 Agent。尚未连接时，Agent 会先完成官方 Setup；通常只需填写赛道。
 
 ```text
+如果尚未连接 Asklear，请先读取 https://dashboard.asklear.cn/agent-setup 完成连接；授权后继续本任务，不要要求我复制 API Key。
+
 请使用 Asklear 的 Emerging Market Validation Recipe 完成研究：
 https://raw.githubusercontent.com/Asklear/asklear-cookbook/main/recipes/emerging-market-validation/workflow.md
 

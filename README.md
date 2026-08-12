@@ -18,9 +18,10 @@ Asklear Cookbook 收录可运行的商业研究方案。每个 Recipe 从一个�
 
 1. 打开 Recipe，先看结果预览和交付物。
 2. 复制页面中的“Use with your Agent”指令。
-3. 告诉 Agent 研究对象；平台、时间和重点问题可以选填。
-4. Agent 自动确定默认范围，先完成核心分析，需要额外下钻时再请求确认。
-5. 最终获得 HTML、PDF、PPT 或 Dashboard，以及数据口径和限制。
+3. 如果尚未连接，Agent 会先通过 Asklear 官方 Setup 页面完成连接；你只需处理登录、内测准入和授权，不需要复制 API Key。
+4. 告诉 Agent 研究对象；平台、时间和重点问题可以选填。
+5. Agent 自动确定默认范围，先完成核心分析，需要额外下钻时再请求确认。
+6. 最终获得 HTML、PDF、PPT 或 Dashboard，以及数据口径和限制。
 
 普通用户只需要阅读 Recipe 页面；其他文件用于 Agent 执行和开发维护。
 

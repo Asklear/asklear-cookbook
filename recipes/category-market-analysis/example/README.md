@@ -1,10 +1,3 @@
-# Example
+# Unverified example archived
 
-第一次经过验证的真实运行完成后，这里将保存：
-
-- `input.json`；
-- `result.json`；
-- `deck.pdf` 或 `deck.pptx`；
-- `preview.png`。
-
-当前不放置虚构结果。
+This draft never produced a verified example. Current public examples belong in [Asklear Research](https://asklear.cn/research).

@@ -48,4 +48,4 @@ node scripts/check-recipes.mjs
 
 合并到 `main` 后运行 `node scripts/check-recipes.mjs --published`，确认 README 中的公开 Workflow 与仓库版本一致。
 
-每个 Recipe 只允许链接当前区域唯一的 Agent 文档入口：`/docs/agent`。工具、字段、计费和错误正文不得复制进 Cookbook。
+每个 Recipe 的可复制指令必须链接当前区域的 `/agent-setup`，将其作为唯一连接入口；工具、字段、计费和错误恢复只允许链接当前区域的 `/docs/agent`，将其作为唯一能力文档入口。除这两个职责不同的官方入口外，不得新增平行接入或能力文档链接，也不得把相关正文复制进 Cookbook。

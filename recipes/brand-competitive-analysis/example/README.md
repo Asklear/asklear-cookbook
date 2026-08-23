@@ -1,10 +1,3 @@
-# 睡洞 EVERYTHINK 示例
+# Example archived
 
-这是一次真实运行，研究睡洞在京东与天猫 U 型枕品类的竞争位置和增长机制。
-
-- 数据范围：2026-01 至 2026-06；
-- 数据水位：2026-06；
-- 交付物：[HTML](report.html) / [PDF](report.pdf)；
-- 证据台账：[run.json](run.json)。
-
-这是历史快照，不代表当前市场。价格带基于 Top 50 商品，京东部分竞品存在品牌多写法造成的跨月缺口，报告已降低相应结论强度。
+This output is retained only as a historical artifact. Current public examples belong in [Asklear Research](https://asklear.cn/research).
